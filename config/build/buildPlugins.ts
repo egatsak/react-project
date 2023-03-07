@@ -1,14 +1,14 @@
-import path from "path";
 import webpack from "webpack";
 import HTMLWebpackPlugin from "html-webpack-plugin";
-import { BuildOptions, BuildPaths } from "./types/config";
+import { BuildOptions } from "./types/config";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 export function buildPlugins({
   paths,
   isDev
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const config = [
     new webpack.ProgressPlugin(),
     new HTMLWebpackPlugin({
       template: paths.html
@@ -21,4 +21,11 @@ export function buildPlugins({
       __IS_DEV__: JSON.stringify(isDev)
     })
   ];
+
+  if (isDev) {
+    config.push(new webpack.HotModuleReplacementPlugin());
+    config.push(new ReactRefreshWebpackPlugin());
+  }
+
+  return config.filter(Boolean);
 }
