@@ -1,6 +1,7 @@
 {
-    "Language": "English",
-    "Translate": "Перевод",
-    "Main": "Главная страница",
-    "About": "О сайте"
+  "About": "О сайте",
+  "Language": "English",
+  "Main": "Главная страница",
+  "Page not found": "Страница не найдена",
+  "Translate": "Перевод"
 }

@@ -1,6 +1,7 @@
 {
-    "Language": "Русский",
-    "Translate": "Translate",
-    "Main": "Main",
-    "About": "About"
+  "About": "About",
+  "Language": "Русский",
+  "Main": "Main",
+  "Page not found": "Page not found",
+  "Translate": "Translate"
 }
