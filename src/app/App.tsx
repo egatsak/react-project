@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
 import { AppRouter } from "./providers/router";
@@ -10,6 +10,7 @@ import "./styles/index.scss";
 
 const App = () => {
     const { theme } = useTheme();
+
     return (
         <div className={classNames("app", {}, [theme])}>
             <Suspense fallback="">

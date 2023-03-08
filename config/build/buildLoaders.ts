@@ -18,6 +18,7 @@ export function buildLoaders(isDev: boolean): webpack.RuleSetRule[] {
                 options: {
                     modules: {
                         auto: (resPath: string) => resPath.includes(".module."),
+                        exportLocalsConvention: "camelCase",
                         localIdentName: isDev
                             ? "[path][name]__[local]-[hash:base64:8]"
                             : "[hash:base64:8]",
