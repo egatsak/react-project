@@ -18,7 +18,7 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    overrides: [],
+
     plugins: ["react", "@typescript-eslint", "i18next"],
     rules: {
         "react/jsx-indent": ["error", 4],
@@ -49,6 +49,20 @@ module.exports = {
         ],
         "max-len": ["error", { code: 120, ignoreComments: true }],
     },
+    overrides: [
+        {
+            files: ["**/src/**/*.test.{ts,tsx}"],
+            rules: {
+                "i18next/no-literal-string": "off",
+            },
+        },
+        {
+            files: ["src/**/*.test.{ts,tsx}", "config/**/*{ts,tsx}"],
+            rules: {
+                "import/no-extraneous-dependencies": "off",
+            },
+        },
+    ],
     globals: {
         __IS_DEV__: true,
     },

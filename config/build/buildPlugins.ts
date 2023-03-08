@@ -1,6 +1,7 @@
 import webpack from "webpack";
 import HTMLWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import { BuildOptions } from "./types/config";
 
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
@@ -8,6 +9,7 @@ const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin"
 export function buildPlugins({
     paths,
     isDev,
+    isAnalyze,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
     const config = [
         new webpack.ProgressPlugin(),
@@ -21,11 +23,15 @@ export function buildPlugins({
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
+        new BundleAnalyzerPlugin({
+            analyzerMode: isAnalyze ? "server" : "disabled",
+            openAnalyzer: false,
+        }),
     ];
 
     if (isDev) {
         config.push(new webpack.HotModuleReplacementPlugin());
-        config.push(new ReactRefreshWebpackPlugin());
+        config.push(new ReactRefreshWebpackPlugin({ overlay: false }));
     }
 
     return config.filter(Boolean);
