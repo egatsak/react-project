@@ -57,6 +57,7 @@ module.exports = {
                 ignoreComments: true,
             },
         ],
+        "linebreak-style": ["warn", "unix"],
     },
     overrides: [
         {
