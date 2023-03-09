@@ -8,6 +8,7 @@ module.exports = {
         "plugin:react/recommended",
         "airbnb",
         "plugin:i18next/recommended",
+        "plugin:storybook/recommended",
         "plugin:prettier/recommended",
     ],
     parser: "@typescript-eslint/parser",
@@ -18,7 +19,6 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-
     plugins: ["react", "@typescript-eslint", "i18next"],
     rules: {
         "react/jsx-indent": ["error", 4],
@@ -26,7 +26,9 @@ module.exports = {
         indent: [2, 4],
         "react/jsx-filename-extension": [
             2,
-            { extensions: [".js", ".jsx", ".tsx"] },
+            {
+                extensions: [".js", ".jsx", ".tsx"],
+            },
         ],
         "import/no-unresolved": "off",
         "import/prefer-default-export": "off",
@@ -47,7 +49,14 @@ module.exports = {
                 /*  onlyAttribute: [""], */
             },
         ],
-        "max-len": ["error", { code: 120, ignoreComments: true }],
+
+        "max-len": [
+            "error",
+            {
+                code: 120,
+                ignoreComments: true,
+            },
+        ],
     },
     overrides: [
         {

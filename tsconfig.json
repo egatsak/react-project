@@ -10,12 +10,18 @@
         "baseUrl": ".",
         "paths": { "*": ["./src/*"] },
         "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "strictBindCallApply": true
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
     },
-    "include": ["./config/jest/setupTests.ts", "src"]
+    "include": [
+        "./config/jest/setupTests.ts",
+        /*         "src", */
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ]
 }
