@@ -1,10 +1,10 @@
 {
-    "About": "О сайте",
-    "ErrorBoundary has caught an Unexpected Error": "ErrorBoundary отловил неизвестную ошибку!",
-    "Language": "English",
-    "Main": "Главная страница",
-    "Page not found": "Страница не найдена",
-    "Reload page": "Перезагрузить страницу",
-    "Translate": "Перевод",
-    "throw error": "выбросить ошибку"
+  "About": "О сайте",
+  "ErrorBoundary has caught an Unexpected Error": "ErrorBoundary отловил неизвестную ошибку!",
+  "Language": "English",
+  "Main": "Главная страница",
+  "Page not found": "Страница не найдена",
+  "Reload page": "Перезагрузить страницу",
+  "Translate": "Перевод",
+  "throw error": "выбросить ошибку"
 }

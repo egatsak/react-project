@@ -21,14 +21,20 @@ jobs:
         run: npm ci
       - name: build project for production
         run: npm run build:prod
+        if: always()
       - name: lint typescript
+        if: always()
         run: npm run lint
       - name: lint styles
+        if: always()
         run: npm run stylelint
       - name: unit tests
+        if: always()
         run: npm run test:unit
       - name: build storybook
+        if: always()
         run: npm run storybook:build
       - name: screenshot testing
+        if: always()
         run: npm run test:ui:ci
       
