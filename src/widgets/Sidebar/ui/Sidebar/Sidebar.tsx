@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AppRoutes } from "shared/config/routeConfig/routeConfig";
+import { AppRoutes, RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
 import { Button, ButtonSize, ButtonTheme } from "shared/ui/Button/Button";
@@ -47,7 +47,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
             <div className={styles.items}>
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    to={AppRoutes.MAIN}
+                    to={RoutePath.main}
                     className={styles.item}
                 >
                     <MainIcon className={styles.icon} />
@@ -58,7 +58,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
 
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
-                    to={AppRoutes.ABOUT}
+                    to={RoutePath.about}
                     className={styles.item}
                 >
                     <AboutIcon className={styles.icon} />

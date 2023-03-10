@@ -21,5 +21,18 @@
             "}"
         ],
         "description": "create React component with classnames & scss imports"
+    },
+
+    "Create test": {
+        "scope": "typescript, typescriptreact",
+        "prefix": ["test"],
+        "body": [
+            "describe('$TM_FILENAME_BASE', () => {",
+            " test('$1', () => {",
+            " expect().toEqual()",
+            " })",
+            "})"
+        ],
+        "description": "Create template test"
     }
 }

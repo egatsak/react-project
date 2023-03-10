@@ -15,7 +15,7 @@ export const Modal: FC<ModalProps> = (props) => {
     const { className, isOpen, onClose, children } = props;
 
     const { theme } = useTheme();
-    console.log(theme);
+
     const mods: Record<string, boolean> = {
         [styles.opened]: isOpen,
         [styles[theme]]: true,
