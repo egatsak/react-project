@@ -22,7 +22,9 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
             theme={ButtonTheme.CLEAR}
             onClick={toggle}
         >
-            {t(short ? "ShortLang" : "Language", { ns: "translation" })}
+            {short
+                ? t("ShortLang", { ns: "translation" })
+                : t("Language", { ns: "translation" })}
         </Button>
     );
 };

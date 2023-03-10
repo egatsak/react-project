@@ -9,6 +9,7 @@ module.exports = {
         "airbnb",
         "plugin:i18next/recommended",
         "plugin:storybook/recommended",
+        /*         "plugin:react-hooks/recommended", */
         "plugin:prettier/recommended",
     ],
     parser: "@typescript-eslint/parser",
@@ -19,7 +20,7 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["react", "@typescript-eslint", "i18next"],
+    plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
     rules: {
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": [2, 4],
@@ -58,16 +59,21 @@ module.exports = {
             },
         ],
         "linebreak-style": ["warn", "unix"],
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
     },
     overrides: [
         {
-            files: ["**/src/**/*.test.{ts,tsx}"],
+            files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
             rules: {
                 "i18next/no-literal-string": "off",
+                "max-len": "off",
             },
         },
         {
-            files: ["src/**/*.test.{ts,tsx}", "config/**/*{ts,tsx}"],
+            files: ["src/**/*.{test,stories}.{ts,tsx}", "config/**/*{ts,tsx}"],
             rules: {
                 "import/no-extraneous-dependencies": "off",
             },
