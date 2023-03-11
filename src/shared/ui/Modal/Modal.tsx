@@ -18,7 +18,6 @@ export const Modal: FC<ModalProps> = (props) => {
 
     const mods: Record<string, boolean> = {
         [styles.opened]: isOpen,
-        [styles[theme]]: true,
     };
 
     const closeHandler = useCallback(() => {
@@ -52,7 +51,13 @@ export const Modal: FC<ModalProps> = (props) => {
 
     return (
         <Portal>
-            <div className={classNames(styles.modal, mods, [className])}>
+            <div
+                className={classNames(styles.modal, mods, [
+                    className,
+                    theme,
+                    "app_modal",
+                ])}
+            >
                 <div className={styles.overlay} onClick={closeHandler}>
                     <div
                         className={classNames(styles.content)}
