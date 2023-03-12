@@ -11,3 +11,7 @@ select {
     margin: 0;
     font: inherit;
 }
+
+webkit-autofill {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
