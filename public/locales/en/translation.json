@@ -1,8 +1,10 @@
 {
   "About": "About",
+  "Authorization form": "Authorization form",
   "ErrorBoundary has caught an Unexpected Error": "ErrorBoundary has caught an Unexpected Error!",
   "Language": "Русский",
   "Log-in": "Login",
+  "Log-out": "Logout",
   "Login": "Login",
   "Main": "Main",
   "Page not found": "Page not found",

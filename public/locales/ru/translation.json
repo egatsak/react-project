@@ -1,8 +1,10 @@
 {
   "About": "О сайте",
+  "Authorization form": "Форма авторизации",
   "ErrorBoundary has caught an Unexpected Error": "ErrorBoundary отловил неизвестную ошибку!",
   "Language": "English",
   "Log-in": "Войти",
+  "Log-out": "Выйти",
   "Login": "Войти",
   "Main": "Главная страница",
   "Page not found": "Страница не найдена",

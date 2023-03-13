@@ -37,5 +37,26 @@
             "})"
         ],
         "description": "Create template test"
+    },
+
+    "Create redux toolkit slice": {
+        "prefix": "slice",
+        "body": [
+            "import { createSlice } from '@reduxjs/toolkit'",
+            "import { ${TM_FILENAME_BASE/([^A-Z]+)(.*)/${1:/capitalize}/}Schema } from '../types/${TM_FILENAME_BASE/([^A-Z]+)(.*)/${1}/}Schema'",
+            "",
+            "const initialState: ${TM_FILENAME_BASE/([^A-Z]+)(.*)/${1:/capitalize}/}Schema = {}",
+            "",
+            "export const ${TM_FILENAME_BASE} = createSlice({",
+            " name: '${TM_FILENAME_BASE/([^A-Z]+)(.+)/$1/}',",
+            " initialState,",
+            " reducers: {},",
+            "})",
+            "",
+            "export const { actions: ${TM_FILENAME_BASE/([^A-Z]+)(.+)/$1/}Actions } = ${TM_FILENAME_BASE}",
+            "export const { reducer: ${TM_FILENAME_BASE/([^A-Z]+)(.+)/$1/}Reducer } = ${TM_FILENAME_BASE}",
+            ""
+        ],
+        "description": "Create redux toolkit slice"
     }
 }
