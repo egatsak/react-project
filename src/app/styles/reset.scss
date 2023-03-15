@@ -12,6 +12,7 @@ select {
     font: inherit;
 }
 
-webkit-autofill {
+input:autofill,
+input:-webkit-autofill {
     transition: background-color 600000s 0s, color 600000s 0s;
 }
