@@ -1,3 +1,21 @@
 {
-  "Profile Page": "Страница профиля"
+  "Age": "Возраст",
+  "Avatar": "Аватар",
+  "Cancel": "Отмена",
+  "City": "Город",
+  "Currency": "Валюта",
+  "Data is not specified": "Данные не указаны",
+  "Edit": "Редактировать",
+  "Firstname and lastname required": "Требуется указать имя и фамилию",
+  "Incorrect age value": "Некорректное значение поля Возраст",
+  "Incorrect country": "Некорректное значение поля Страна",
+  "Lastname": "Фамилия",
+  "Name": "Имя",
+  "Please reload the page": "Пожалуйста, перезагрузите страницу",
+  "Profile": "Профиль",
+  "Profile Page": "Страница профиля",
+  "Profile loading error": "Ошибка загрузки профиля",
+  "Save": "Сохранить",
+  "Server error": "Ошибка сервера",
+  "Username": "Имя пользователя"
 }

@@ -5,15 +5,16 @@ import styles from "./Input.module.scss";
 
 type HTMLInputProps = Omit<
     InputHTMLAttributes<HTMLInputElement>,
-    "value" | "onChange"
+    "value" | "onChange" | "readOnly"
 >;
 
 interface InputProps extends HTMLInputProps {
     className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
     autofocus?: boolean;
     inputId?: string;
+    readonly?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -25,6 +26,7 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         autofocus,
         inputId,
+        readonly,
         ...otherProps
     } = props;
 
@@ -54,7 +56,10 @@ export const Input = memo((props: InputProps) => {
                 type={type}
                 value={value}
                 onChange={changeHandler}
-                className={styles.input}
+                className={classNames(styles.input, {
+                    [styles.readonly]: readonly,
+                })}
+                readOnly={readonly}
                 {...otherProps}
             />
         </div>

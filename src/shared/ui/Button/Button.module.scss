@@ -27,6 +27,12 @@
     background: none;
 }
 
+.outline_red {
+    border: 1px solid var(--red-light-color);
+    color: var(--red-light-color);
+    background: none;
+}
+
 .background {
     border: none;
     color: var(--primary-color);

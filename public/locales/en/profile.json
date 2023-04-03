@@ -1,3 +1,21 @@
 {
-  "Profile Page": "Profile Page"
+  "Age": "Age",
+  "Avatar": "Avatar",
+  "Cancel": "Cancel",
+  "City": "City",
+  "Currency": "Currency",
+  "Data is not specified": "Data is not specified",
+  "Edit": "Edit",
+  "Firstname and lastname required": "Firstname and lastname required",
+  "Incorrect age value": "Incorrect age value",
+  "Incorrect country": "Incorrect country",
+  "Lastname": "Lastname",
+  "Name": "Name",
+  "Please reload the page": "Please reload the page",
+  "Profile": "Profile",
+  "Profile Page": "Profile Page",
+  "Profile loading error": "Profile loading error",
+  "Save": "Save",
+  "Server error": "Server error",
+  "Username": "Username"
 }
