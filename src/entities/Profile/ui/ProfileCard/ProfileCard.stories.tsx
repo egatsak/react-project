@@ -5,6 +5,11 @@ import { Currency } from "entities/Currency";
 import Avatar from "shared/assets/tests/avatar.jpg";
 import { ProfileCard } from "./ProfileCard";
 
+/* Не проходил скриншотный тест для ProfileCard_primary. 
+Проблема была в том, что на скриншотах, которые были взяты локально со сторибука 
+и со статик сторибука, отличались пути к аватару. 
+Решил проблему, просто захардкодив ссылку, на внешний ресурс. */
+
 export default {
     title: "entities/ProfileCard",
     component: ProfileCard,
