@@ -1,7 +1,8 @@
 {
   "About": "О сайте",
   "Authorization form": "Форма авторизации",
-  "Country": "",
+  "Copy": "Копировать",
+  "Country": "Страна",
   "Currency": "Валюта",
   "ErrorBoundary has caught an Unexpected Error": "ErrorBoundary отловил неизвестную ошибку!",
   "Language": "English",
@@ -11,8 +12,6 @@
   "Main": "Главная страница",
   "Page not found": "Страница не найдена",
   "Password": "Пароль",
-  "Please reload the page": "",
-  "Profile loading error": "",
   "Reload page": "Перезагрузить страницу",
   "ShortLang": "En",
   "Translate": "Перевод",

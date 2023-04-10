@@ -5,6 +5,7 @@
     "rules": {
         "indentation": [4],
         "selector-class-pattern": null,
+        "declaration-colon-newline-after": null,
         "order/order": [
             "custom-properties",
             "dollar-variables",

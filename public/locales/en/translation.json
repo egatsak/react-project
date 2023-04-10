@@ -1,6 +1,7 @@
 {
   "About": "About",
   "Authorization form": "Authorization form",
+  "Copy": "Copy",
   "Country": "Country",
   "Currency": "Currency",
   "ErrorBoundary has caught an Unexpected Error": "ErrorBoundary has caught an Unexpected Error!",
@@ -11,8 +12,6 @@
   "Main": "Main",
   "Page not found": "Page not found",
   "Password": "Password",
-  "Please reload the page": "",
-  "Profile loading error": "",
   "Reload page": "Reload page",
   "ShortLang": "Ru",
   "Translate": "Translate",

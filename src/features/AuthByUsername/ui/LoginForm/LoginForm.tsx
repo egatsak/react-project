@@ -15,7 +15,7 @@ import { getLoginUsername } from "../../model/selectors/getLoginUsername/getLogi
 import { getLoginPassword } from "../../model/selectors/getLoginPassword/getLoginPassword";
 import { getLoginIsLoading } from "../../model/selectors/getLoginIsLoading/getLoginIsLoading";
 import { getLoginError } from "../../model/selectors/getLoginError/getLoginError";
-import { loginByUsername } from "../../services/loginByUsername";
+import { loginByUsername } from "../../model/services/loginByUsername";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 
 import styles from "./LoginForm.module.scss";
