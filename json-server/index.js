@@ -53,6 +53,13 @@ server.use((req, res, next) => {
 
 server.use(router);
 
+/* server.use(
+    jsonServer.rewriter({
+        "/comments/:id":
+            "/comments?articleId=:id&_expand=user&_sort=id&_order=asc",
+    })
+); */
+
 server.listen(8000, () => {
     console.log("server is running on 8000 port");
 });
