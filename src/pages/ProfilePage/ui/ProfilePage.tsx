@@ -1,5 +1,6 @@
-import { FC, useCallback, useEffect } from "react";
+import { FC, useCallback } from "react";
 import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import {
@@ -11,7 +12,6 @@ import {
     ProfileCard,
     ValidateProfileError,
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileForm,
     getProfileIsLoading,
@@ -24,6 +24,7 @@ import { Currency } from "entities/Currency";
 import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { classNames } from "shared/lib/classNames/classNames";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = { profile: profileReducer };
@@ -36,6 +37,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation("profile");
     const dispatch = useAppDispatch();
+    const { id } = useParams<{ id: string }>();
 
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
@@ -64,11 +66,11 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
         }),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== "storybook") {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback(
         (value?: string) => {
@@ -127,7 +129,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     );
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames("", {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length &&
