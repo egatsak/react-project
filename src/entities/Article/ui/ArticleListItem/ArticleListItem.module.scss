@@ -1,0 +1,90 @@
+.articleListItem {
+}
+
+.GRID {
+    width: 230px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    .imageWrapper {
+        position: relative;
+        width: 200px;
+        height: 200px;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .date {
+        position: absolute;
+        right: 7px;
+        top: 5px;
+        display: none;
+    }
+
+    .infoWrapper {
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+    }
+
+    .types p {
+        overflow: hidden;
+        width: 115px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .views {
+        margin-right: 8px;
+        margin-left: auto;
+    }
+
+    .title {
+        margin-top: 8px;
+    }
+
+    .title p {
+        overflow: hidden;
+        width: 200px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &:hover {
+        opacity: 0.8;
+        transform: scale(1.01);
+
+        .date {
+            display: block;
+        }
+    }
+}
+
+.LIST {
+    .card {
+    }
+
+    .imageWrapper {
+    }
+
+    .img {
+    }
+
+    .date {
+    }
+
+    .infoWrapper {
+    }
+
+    .types {
+    }
+
+    .views {
+    }
+
+    .title {
+    }
+}
