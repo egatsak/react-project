@@ -11,6 +11,11 @@ const article: Article = {
     id: "1",
     title: "JS News",
     subtitle: "News in JS 2023",
+    user: {
+        id: "1",
+        username: "admin",
+        avatar: "",
+    },
     img: "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
     views: 1022,
     createdAt: "26.02.2022",

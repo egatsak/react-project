@@ -1,10 +1,55 @@
-.articleListItem {
+.LIST {
+    .views {
+        margin-left: auto;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+    }
+
+    .username {
+        margin-left: 8px;
+    }
+
+    .date {
+        margin-left: auto;
+    }
+
+    .title {
+        margin-top: 8px;
+    }
+
+    .img {
+        margin: 16px 0;
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        margin-top: 16px;
+    }
+
+    .textBlock {
+        overflow-y: hidden;
+        max-height: 200px;
+    }
 }
 
 .GRID {
     width: 230px;
     transition: 0.2s;
     cursor: pointer;
+
+    .date {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+    }
 
     .imageWrapper {
         position: relative;
@@ -15,13 +60,7 @@
     .img {
         width: 200px;
         height: 200px;
-    }
-
-    .date {
-        position: absolute;
-        right: 7px;
-        top: 5px;
-        display: none;
+        object-fit: cover;
     }
 
     .infoWrapper {
@@ -60,31 +99,5 @@
         .date {
             display: block;
         }
-    }
-}
-
-.LIST {
-    .card {
-    }
-
-    .imageWrapper {
-    }
-
-    .img {
-    }
-
-    .date {
-    }
-
-    .infoWrapper {
-    }
-
-    .types {
-    }
-
-    .views {
-    }
-
-    .title {
     }
 }

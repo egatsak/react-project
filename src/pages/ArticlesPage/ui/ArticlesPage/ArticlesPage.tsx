@@ -2,14 +2,19 @@
 import { FC, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
-import { Article, ArticleList } from "entities/Article";
+import { Article, ArticleList, ArticleView } from "entities/Article";
 
 import styles from "./ArticlesPage.module.scss";
 
-const article = {
+const article: Article = {
     id: "1",
     title: "JS News",
     subtitle: "News in JS 2023",
+    user: {
+        id: "1",
+        username: "admin",
+        avatar: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F",
+    },
     img: "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
     views: 1022,
     createdAt: "26.02.2022",
@@ -86,7 +91,13 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
 
     return (
         <div className={classNames(styles.articlesPage, {}, [className])}>
-            <ArticleList articles={[article]} />
+            <ArticleList
+                view={ArticleView.GRID}
+                articles={new Array(16).fill(0).map((item, index) => ({
+                    ...article,
+                    id: `${index}`,
+                }))}
+            />
         </div>
     );
 };
