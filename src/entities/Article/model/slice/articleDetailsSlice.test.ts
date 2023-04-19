@@ -6,6 +6,11 @@ import { articleDetailsReducer } from "./articleDetailsSlice";
 const data: Article = {
     id: "1",
     title: "123",
+    user: {
+        id: "1",
+        username: "admin",
+        avatar: "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F",
+    },
     subtitle: "1234",
     views: 123,
     img: "1235",
