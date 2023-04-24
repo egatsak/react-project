@@ -16,6 +16,7 @@ import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Button } from "shared/ui/Button/Button";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import { Page } from "shared/ui/Page/Page";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
@@ -60,18 +61,18 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
 
     if (!id) {
         return (
-            <div
+            <Page
                 className={classNames(styles.articleDetailsPage, {}, [
                     className,
                 ])}
             >
                 {t("Article not found", { ns: "article" })}
-            </div>
+            </Page>
         );
     }
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div
+            <Page
                 className={classNames(styles.articleDetailsPage, {}, [
                     className,
                 ])}
@@ -89,7 +90,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

@@ -25,6 +25,7 @@ import { Country } from "entities/Country";
 import { Text, TextTheme } from "shared/ui/Text/Text";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { Page } from "shared/ui/Page/Page";
 import { ProfilePageHeader } from "./ProfilePageHeader/ProfilePageHeader";
 
 const reducers: ReducersList = { profile: profileReducer };
@@ -130,7 +131,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames("", {}, [className])}>
+            <Page className={classNames("", {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length &&
                     validateErrors.map((err) => (
@@ -154,7 +155,7 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
                     onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };
