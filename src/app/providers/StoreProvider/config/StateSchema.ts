@@ -14,10 +14,12 @@ import { LoginSchema } from "features/AuthByUsername";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { AddCommentFormSchema } from "features/AddCommentForm";
 import { ArticlesPageSchema } from "pages/ArticlesPage";
+import { UISchema } from "features/UI";
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    ui: UISchema;
 
     // Async reducers
     loginForm?: LoginSchema;
@@ -30,7 +32,7 @@ export interface StateSchema {
 
 export type StateSchemaKey = keyof StateSchema;
 
-export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
+// export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;

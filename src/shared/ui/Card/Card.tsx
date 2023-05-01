@@ -9,7 +9,6 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 
 export const Card = (props: CardProps) => {
     const { className, children, ...otherProps } = props;
-
     return (
         <div
             className={classNames(styles.card, {}, [className])}
