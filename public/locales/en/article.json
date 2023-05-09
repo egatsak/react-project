@@ -1,11 +1,16 @@
 {
-  "ARTICLE DETAILS": "ARTICLE DETAILS",
-  "Article Details": "Article Details",
-  "Article loading error": "Article loading error",
-  "Article not found": "Article not found",
-  "Article page": "Article page",
-  "ArticlePage": "ArticlePage",
-  "Back to article list": "Back to article list",
-  "Comments": "Comments",
-  "Read more": "Read more"
+    "ARTICLE DETAILS": "ARTICLE DETAILS",
+    "All articles": "All articles",
+    "Article Details": "Article Details",
+    "Article loading error": "Article loading error",
+    "Article not found": "Article not found",
+    "Article page": "Article page",
+    "ArticlePage": "ArticlePage",
+    "Articles not found": "Articles not found",
+    "Back to article list": "Back to article list",
+    "Comments": "Comments",
+    "Economics": "Economics",
+    "IT": "IT",
+    "Read more": "Read more",
+    "Science": "Science"
 }
