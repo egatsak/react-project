@@ -2,10 +2,10 @@ import { FC, memo, useCallback } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
-import { ArticleDetails } from "entities/Article";
+import { ArticleDetails, ArticleList, ArticleView } from "entities/Article";
 
 import { AddCommentForm } from "features/AddCommentForm";
-import { Text } from "shared/ui/Text/Text";
+import { Text, TextSize } from "shared/ui/Text/Text";
 import { CommentList } from "entities/Comment";
 import {
     DynamicModuleLoader,
@@ -17,22 +17,24 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Button } from "shared/ui/Button/Button";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Page } from "widgets/Page/Page";
+import { articleDetailsPageReducer } from "../../model/slice";
+import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
+import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
+import { getArticleRecommendations } from "../../model/slice/articleDetailsPageRecommendationsSlice";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
-import {
-    articleDetailsCommentsReducer,
-    getArticleComments,
-} from "../../model/slice/articleDetailsCommentsSlice";
+import { getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
 
 import styles from "./ArticleDetailsPage.module.scss";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
@@ -41,8 +43,12 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { id } = useParams<{ id: string }>();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const recommendations = useSelector(getArticleRecommendations.selectAll);
+    const recommendationsIsLoading = useSelector(
+        getArticleRecommendationsIsLoading
+    );
+
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const onSendComment = useCallback(
         (text: string) => {
@@ -51,12 +57,9 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         [dispatch]
     );
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -77,11 +80,22 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     className,
                 ])}
             >
-                <Button onClick={onBackToList}>
-                    {t("Back to article list", { ns: "article" })}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
+                    size={TextSize.L}
+                    title={t("Recommendations", { ns: "article" })}
+                    className={styles.commentTitle}
+                />
+                <ArticleList
+                    target="_blank"
+                    articles={recommendations}
+                    isLoading={recommendationsIsLoading}
+                    className={styles.recommendations}
+                    view={ArticleView.GRID}
+                />
+                <Text
+                    size={TextSize.L}
                     title={t("Comments", { ns: "article" })}
                     className={styles.commentTitle}
                 />
