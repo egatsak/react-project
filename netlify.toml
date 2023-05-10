@@ -1,0 +1,5 @@
+# Redirects for role-based access control don’t use the 'to' property.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
