@@ -1,8 +1,7 @@
 import { lazy } from "react";
-import lazyLoadingTimeout from "shared/lib/lazyLoadingTimeout/lazyLoadingTimeout";
 
 export const ArticleEditPageAsync = lazy(() => {
-    return lazyLoadingTimeout(import("./ArticleEditPage"), 1000);
+    return import("./ArticleEditPage");
 });
 
 /* For those who doesn't use default import

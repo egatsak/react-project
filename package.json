@@ -9,7 +9,7 @@
         "start:dev": "concurrently \"npm start\" \"npm run start:dev:server\"",
         "start:dev:server": "node ./json-server/index.js",
         "build:dev": "node node_modules/webpack/bin/webpack.js --env mode=development",
-        "build:prod": "node node_modules/webpack/bin/webpack.js --env mode=production",
+        "build:prod": "node node_modules/webpack/bin/webpack.js --env mode=production apiUrl=https://ulbi-server-mu.vercel.app",
         "build:prod:analyze": "npm run build:prod --env analyze=true",
         "lint": "node ./node_modules/eslint/bin/eslint.js \"**/*.{ts,tsx}\"",
         "lint:fix": "node ./node_modules/eslint/bin/eslint.js \"**/*.{ts,tsx}\" --fix",
