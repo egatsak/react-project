@@ -1,12 +1,11 @@
 {
   "About": "О сайте",
-  "All articles": "All articles",
   "App": "App",
   "Articles": "Статьи",
   "Authorization form": "Форма авторизации",
   "Copy": "Копировать",
   "Country": "Страна",
-  "Create new article": "Create new article",
+  "Create new article": "Создать новую статью",
   "Created at": "Дате создания",
   "Currency": "Валюта",
   "Enter comment": "Введите комментарий",
@@ -21,7 +20,7 @@
   "Password": "Пароль",
   "Profile": "Профиль",
   "Reload page": "Перезагрузить страницу",
-  "Search": "Search",
+  "Search": "Поиск",
   "ShortLang": "En",
   "Sort by": "Сортировать по",
   "Submit": "Представлять на рассмотрение",
@@ -33,7 +32,5 @@
   "by": "по",
   "desc": "убыванию",
   "text lorem ipsum lorem ipsum": "текст lorem ipsum lorem ipsum",
-  "throw error": "выбросить ошибку",
-  "Наука": "Наука",
-  "Экономика": "Экономика"
+  "throw error": "выбросить ошибку"
 }

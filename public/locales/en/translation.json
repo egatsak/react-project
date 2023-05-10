@@ -1,6 +1,5 @@
 {
   "About": "About",
-  "All articles": "All articles",
   "App": "App",
   "Articles": "Articles",
   "Authorization form": "Authorization form",
@@ -33,7 +32,5 @@
   "by": "by",
   "desc": "desc",
   "text lorem ipsum lorem ipsum": "text lorem ipsum lorem ipsum",
-  "throw error": "throw error",
-  "Наука": "Наука",
-  "Экономика": "Экономика"
+  "throw error": "throw error"
 }

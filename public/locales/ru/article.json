@@ -1,6 +1,5 @@
 {
-  "ARTICLE DETAILS": "ARTICLE DETAILS",
-  "All articles": "All articles",
+  "All articles": "Все статьи",
   "Article Details": "Детали статьи",
   "Article loading error": "Ошибка загрузки статьи",
   "Article not found": "Статья не найдена",
@@ -9,12 +8,12 @@
   "Articles not found": "Articles not found",
   "Back to article list": "Назад к списку",
   "Comments": "Комментарии",
-  "Economics": "Economics",
-  "Edit": "Edit",
-  "Edit article ID = ": "Edit article ID = ",
+  "Economics": "Экономика",
+  "Edit": "Редактировать",
+  "Edit article ID = ": "Редактировать статью с ID = ",
   "IT": "IT",
-  "New article": "New article",
+  "New article": "Новая статья",
   "Read more": "Читать",
-  "Recommendations": "Recommendations",
-  "Science": "Science"
+  "Recommendations": "Рекомендации",
+  "Science": "Наука"
 }
