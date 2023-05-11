@@ -20,7 +20,13 @@ module.exports = {
         ecmaVersion: "latest",
         sourceType: "module",
     },
-    plugins: ["react", "@typescript-eslint", "i18next", "react-hooks"],
+    plugins: [
+        "react",
+        "@typescript-eslint",
+        "i18next",
+        "react-hooks",
+        "egatsak-fsd-plugin",
+    ],
     rules: {
         "react/jsx-indent": ["error", 4],
         "react/jsx-indent-props": [2, 4],
@@ -85,6 +91,7 @@ module.exports = {
             },
         ],
         "no-undef": "off",
+        "egatsak-fsd-plugin/path-checker": "error",
     },
     overrides: [
         {
