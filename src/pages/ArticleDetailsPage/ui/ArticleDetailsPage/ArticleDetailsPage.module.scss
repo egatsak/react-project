@@ -1,14 +1,10 @@
 .articleDetailsPage {
-    color: inherit;
-}
-
-.commentTitle {
-    margin-top: 20px;
+    min-height: 100%;
 }
 
 .recommendations {
     flex-wrap: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
-    margin-top: 20px;
+    width: 100%;
 }

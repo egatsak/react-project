@@ -15,7 +15,7 @@ import {
 import { classNames } from "shared/lib/classNames/classNames";
 
 import { getUserAuthData } from "entities/User";
-import styles from "./ProfilePageHeader.module.scss";
+import { HStack } from "shared/ui/Stack";
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -44,23 +44,22 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(styles.profilePageHeader, {}, [className])}>
+        <HStack
+            max
+            justify="between"
+            className={classNames("", {}, [className])}
+        >
             <Text title={t("Profile", { ns: "profile" })} />
             {canEdit && (
-                <div className={styles.btnWrapper}>
+                <div>
                     {readonly ? (
-                        <Button
-                            theme={ButtonTheme.OUTLINE}
-                            className={styles.editBtn}
-                            onClick={onEdit}
-                        >
+                        <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>
                             {t("Edit", { ns: "profile" })}
                         </Button>
                     ) : (
-                        <>
+                        <HStack gap="8">
                             <Button
                                 theme={ButtonTheme.OUTLINE_RED}
-                                className={styles.cancelBtn}
                                 onClick={onCancelEdit}
                             >
                                 {t("Cancel", { ns: "profile" })}
@@ -71,10 +70,10 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
                             >
                                 {t("Save", { ns: "profile" })}
                             </Button>
-                        </>
+                        </HStack>
                     )}
                 </div>
             )}
-        </div>
+        </HStack>
     );
 };

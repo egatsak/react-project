@@ -59,6 +59,10 @@ module.exports = {
                     "inputId",
                     "alt",
                     "target",
+                    "direction",
+                    "justify",
+                    "align",
+                    "gap",
                 ],
                 /*  onlyAttribute: [""], */
             },

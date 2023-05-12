@@ -15,6 +15,7 @@ import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Page } from "widgets/Page/Page";
+import { VStack } from "shared/ui/Stack";
 import { articleDetailsPageReducer } from "../../model/slice";
 import { fetchArticleRecommendations } from "../../model/services/fetchArticleRecommendations/fetchArticleRecommendations";
 import { getArticleRecommendationsIsLoading } from "../../model/selectors/recommendations";
@@ -71,6 +72,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
             </Page>
         );
     }
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page
@@ -78,30 +80,32 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                     className,
                 ])}
             >
-                <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
-                <Text
-                    size={TextSize.L}
-                    title={t("Recommendations", { ns: "article" })}
-                    className={styles.commentTitle}
-                />
-                <ArticleList
-                    target="_blank"
-                    articles={recommendations}
-                    isLoading={recommendationsIsLoading}
-                    className={styles.recommendations}
-                    view={ArticleView.GRID}
-                />
-                <Text
-                    size={TextSize.L}
-                    title={t("Comments", { ns: "article" })}
-                    className={styles.commentTitle}
-                />
-                <AddCommentForm onSendComment={onSendComment} />
-                <CommentList
-                    isLoading={commentsIsLoading}
-                    comments={comments}
-                />
+                <VStack gap="16" max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <Text
+                        size={TextSize.L}
+                        title={t("Recommendations", { ns: "article" })}
+                        className={styles.commentTitle}
+                    />
+                    <ArticleList
+                        target="_blank"
+                        articles={recommendations}
+                        isLoading={recommendationsIsLoading}
+                        view={ArticleView.GRID}
+                        className={styles.recommendations}
+                    />
+                    <Text
+                        size={TextSize.L}
+                        title={t("Comments", { ns: "article" })}
+                        className={styles.commentTitle}
+                    />
+                    <AddCommentForm onSendComment={onSendComment} />
+                    <CommentList
+                        isLoading={commentsIsLoading}
+                        comments={comments}
+                    />
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );
