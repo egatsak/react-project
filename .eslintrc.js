@@ -64,6 +64,8 @@ module.exports = {
                     "align",
                     "gap",
                     "role",
+                    "as",
+                    "refName",
                 ],
                 /*  onlyAttribute: [""], */
             },
