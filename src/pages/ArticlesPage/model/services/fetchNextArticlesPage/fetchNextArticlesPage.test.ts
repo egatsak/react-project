@@ -19,10 +19,8 @@ describe("THUNK fetchNextArticlesPage", () => {
 
         await thunk.callThunk();
 
-        // TO FIX!
-        /* 
         expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 }); */
+        expect(fetchArticlesList).toHaveBeenCalled();
 
         expect(true).toBe(true);
     });

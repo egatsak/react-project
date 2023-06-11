@@ -26,6 +26,7 @@ import {
 
 import styles from "./ArticlesPage.module.scss";
 import { ArticlePageFilters } from "../ArticlePageFilters/ArticlePageFilters";
+import { ArticleInfiniteList } from "../ArticleInfiniteList/ArticleInfiniteList";
 
 interface ArticlesPageProps {
     className?: string;
@@ -39,19 +40,15 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation("article");
     const dispatch = useAppDispatch();
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
-    const error = useSelector(getArticlesPageError);
-    const view = useSelector(getArticlesPageView);
     const [searchParams] = useSearchParams();
-
-    const onLoadNextPart = useCallback(() => {
-        dispatch(fetchNextArticlesPage());
-    }, [dispatch]);
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
     });
+
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
@@ -60,12 +57,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
                 className={classNames(styles.articlesPage, {}, [className])}
             >
                 <ArticlePageFilters />
-                <ArticleList
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                    className={styles.list}
-                />
+                <ArticleInfiniteList className={styles.list} />
             </Page>
         </DynamicModuleLoader>
     );
