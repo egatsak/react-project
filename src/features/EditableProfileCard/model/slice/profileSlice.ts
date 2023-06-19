@@ -62,9 +62,9 @@ export const profileSlice = createSlice({
                     state.validateErrors = undefined;
                 }
             )
-            .addCase(updateProfileData.rejected, (state) => {
+            .addCase(updateProfileData.rejected, (state, action) => {
                 state.isLoading = false;
-                state.validateErrors = undefined;
+                state.validateErrors = action.payload;
             });
     },
 });

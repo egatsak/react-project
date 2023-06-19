@@ -41,7 +41,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     const error = useSelector(getProfileError);
     const readonly = useSelector(getProfileReadonly);
     const validateErrors = useSelector(getProfileValidateErrors);
-
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t("Server error", {
             ns: "profile",
@@ -134,6 +133,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                             theme={TextTheme.ERROR}
                             text={validateErrorTranslates[err]}
                             key={err}
+                            data-testid="EditableProfileCard.error"
                         />
                     ))}
                 <ProfileCard
