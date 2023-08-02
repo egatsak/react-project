@@ -3,7 +3,7 @@ import webpack, { DefinePlugin, RuleSetRule } from "webpack";
 import { buildCssLoader } from "../build/loaders/buildCssLoaders";
 
 import { BuildPaths } from "../build/types/config";
-/* 
+
 export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
         build: "",
@@ -47,9 +47,7 @@ export default ({ config }: { config: webpack.Configuration }) => {
     return config;
 };
 
- */
-
-export default ({ config }: { config: webpack.Configuration }) => {
+/* export default ({ config }: { config: webpack.Configuration }) => {
     const paths: BuildPaths = {
         build: "",
         html: "",
@@ -87,3 +85,4 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     return config;
 };
+ */
