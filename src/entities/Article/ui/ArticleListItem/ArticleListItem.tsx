@@ -12,12 +12,11 @@ import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppLink } from "shared/ui/AppLink/AppLink";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { Article, ArticleTextBlock } from "../../model/types/article";
 import {
-    Article,
     ArticleBlockType,
-    ArticleTextBlock,
     ArticleView,
-} from "../../model/types/article";
+} from "../../model/consts/articleConsts";
 
 import styles from "./ArticleListItem.module.scss";
 

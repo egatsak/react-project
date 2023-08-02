@@ -1,11 +1,11 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Article } from "../../model/types/article";
+import { ArticleDetails } from "./ArticleDetails";
 import {
-    Article,
     ArticleBlockType,
     ArticleType,
-} from "../../model/types/article";
-import { ArticleDetails } from "./ArticleDetails";
+} from "../../model/consts/articleConsts";
 
 const article: Article = {
     id: "1",

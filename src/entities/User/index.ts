@@ -9,3 +9,5 @@ export {
 } from "./model/selectors/roleSelectors";
 
 export type { User, UserSchema } from "./model/types/user";
+
+export { UserRole } from "./model/consts/userConsts";

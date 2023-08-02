@@ -12,7 +12,8 @@
         "paths": { "*": ["./src/*"] },
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "strictBindCallApply": true
+        "strictBindCallApply": true,
+        "isolatedModules": true
     },
     "ts-node": {
         "compilerOptions": {

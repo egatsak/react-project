@@ -15,7 +15,7 @@ import CalendarIcon from "shared/assets/icons/icon-article-calendar.svg";
 
 import { Icon } from "shared/ui/Icon/Icon";
 import { HStack, VStack } from "shared/ui/Stack";
-import { ArticleBlock, ArticleBlockType } from "../../model/types/article";
+import { ArticleBlock } from "../../model/types/article";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import {
     getArticleDetailsData,
@@ -28,6 +28,7 @@ import styles from "./ArticleDetails.module.scss";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import { ArticleImageBlockComponent } from "../ArticleImageBlockComponent/ArticleImageBlockComponent";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
+import { ArticleBlockType } from "../../model/consts/articleConsts";
 
 function renderBlock(block: ArticleBlock) {
     switch (block.type) {

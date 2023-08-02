@@ -3,7 +3,7 @@ import { memo } from "react";
 import { Card } from "shared/ui/Card/Card";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Skeleton } from "shared/ui/Skeleton/Skeleton";
-import { ArticleView } from "../../model/types/article";
+import { ArticleView } from "../../model/consts/articleConsts";
 
 import styles from "./ArticleListItem.module.scss";
 

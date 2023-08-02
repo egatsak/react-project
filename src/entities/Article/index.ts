@@ -12,7 +12,8 @@ export {
     ArticleView,
     ArticleSortField,
     ArticleType,
-} from "./model/types/article";
+    ArticleBlockType,
+} from "./model/consts/articleConsts";
 
 export type { Article } from "./model/types/article";
 

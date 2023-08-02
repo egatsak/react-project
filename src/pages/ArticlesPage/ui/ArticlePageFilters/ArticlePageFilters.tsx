@@ -5,11 +5,10 @@ import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce";
 
-import { ArticleType } from "entities/Article/model/types/article";
-
 import {
     ArticleSortField,
     ArticleSortSelector,
+    ArticleType,
     ArticleTypeTabs,
     ArticleView,
     ArticleViewSelector,
