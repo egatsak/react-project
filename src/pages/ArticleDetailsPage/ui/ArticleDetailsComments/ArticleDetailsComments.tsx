@@ -1,4 +1,4 @@
-import { memo, useCallback } from "react";
+import { Suspense, memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -10,6 +10,7 @@ import { Text, TextSize } from "shared/ui/Text/Text";
 import { classNames } from "shared/lib/classNames/classNames";
 
 import { VStack } from "shared/ui/Stack";
+import { Loader } from "shared/ui/Loader/Loader";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
@@ -17,7 +18,7 @@ import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 
 interface ArticleDetailsCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsComments = memo(
@@ -45,7 +46,9 @@ export const ArticleDetailsComments = memo(
                     size={TextSize.L}
                     title={t("Comments", { ns: "article" })}
                 />
+                {/*       <Suspense fallback={<Loader />}> */}
                 <AddCommentForm onSendComment={onSendComment} />
+                {/*         </Suspense> */}
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}

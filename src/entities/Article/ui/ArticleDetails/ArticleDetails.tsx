@@ -61,7 +61,7 @@ function renderBlock(block: ArticleBlock) {
 }
 
 interface ArticleDetailsProps {
-    id: string;
+    id?: string;
     className?: string;
 }
 
@@ -153,6 +153,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <DynamicModuleLoader reducers={reducers}>
             <VStack
                 gap="16"
+                max
                 className={classNames(styles.articleDetails, {}, [className])}
             >
                 {content}

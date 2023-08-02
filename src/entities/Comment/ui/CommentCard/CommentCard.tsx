@@ -21,7 +21,9 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div
+            <VStack
+                gap="8"
+                max
                 className={classNames(styles.commentCard, {}, [
                     className,
                     styles.loading,
@@ -36,7 +38,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
                     />
                 </div>
                 <Skeleton width="100%" height={50} className={styles.text} />
-            </div>
+            </VStack>
         );
     }
 

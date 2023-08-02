@@ -32,7 +32,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const { className, article, view, target } = props;
     const [_, bindHover] = useHover();
     const { t } = useTranslation();
-    console.log(article);
+
     const types = (
         <Text text={article.type.join(", ")} className={styles.types} />
     );
