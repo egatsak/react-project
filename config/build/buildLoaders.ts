@@ -13,10 +13,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev);
 
-    const babelLoader = buildBabelLoader(options);
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
     // if we use ts, we don't need babel-loader
-    const typescriptLoader = {
+    /*  const typescriptLoader = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         loader: "ts-loader",
@@ -26,7 +27,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             }),
             transpileOnly: isDev,
         },
-    };
+    }; */
 
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
@@ -36,5 +37,12 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
             },
         ],
     };
-    return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
+    return [
+        fileLoader,
+        svgLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typescriptLoader,
+        cssLoader,
+    ];
 }
