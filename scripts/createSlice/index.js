@@ -1,3 +1,5 @@
+// npm run generate:slice features sliceName
+
 const createTemplate = require("./templates/createTemplate");
 
 const layer = process.argv[2];

@@ -2,9 +2,12 @@ import { Fragment, ReactNode, useMemo } from "react";
 import { Listbox as HListBox } from "@headlessui/react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { DropdownDirection } from "shared/types/ui";
+import { Button } from "../../../Button/Button";
+import { HStack } from "../../../Stack";
+import { mapDirectionToClass } from "../../styles/consts";
+
 import styles from "./ListBox.module.scss";
-import { Button } from "../Button/Button";
-import { HStack } from "../Stack";
+import popupStyles from "../../styles/popup.module.scss";
 
 export interface ListBoxItem {
     value: string;
@@ -22,13 +25,6 @@ interface ListBoxProps {
     label?: string;
     direction?: DropdownDirection;
 }
-
-const mapDirectionToClass: Record<DropdownDirection, string> = {
-    "top-left": styles.optionsTopLeft,
-    "bottom-left": styles.optionsBottomLeft,
-    "top-right": styles.optionsTopRight,
-    "bottom-right": styles.optionsBottomRight,
-};
 
 export function ListBox(props: ListBoxProps) {
     const {
@@ -52,7 +48,10 @@ export function ListBox(props: ListBoxProps) {
             {label && <span>{`${label}>`}</span>}
             <HListBox
                 as="div"
-                className={classNames(styles.listBox, {}, [className])}
+                className={classNames(styles.listBox, {}, [
+                    className,
+                    popupStyles.popup,
+                ])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
@@ -73,8 +72,8 @@ export function ListBox(props: ListBoxProps) {
                             {({ active, selected }) => (
                                 <li
                                     className={classNames(styles.item, {
-                                        [styles.active]: active,
-                                        [styles.disabled]: item.disabled,
+                                        [popupStyles.active]: active,
+                                        [popupStyles.disabled]: item.disabled,
                                     })}
                                 >
                                     {selected && "✓"}

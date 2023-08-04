@@ -1,9 +1,11 @@
 import { Menu } from "@headlessui/react";
-import { classNames } from "shared/lib/classNames/classNames";
 import { Fragment, ReactNode, useMemo } from "react";
 import { DropdownDirection } from "shared/types/ui";
+import { classNames } from "shared/lib/classNames/classNames";
+import { AppLink } from "../../../AppLink/AppLink";
+import { mapDirectionToClass } from "../../styles/consts";
 import styles from "./Dropdown.module.scss";
-import { AppLink } from "../AppLink/AppLink";
+import popupStyles from "../../styles/popup.module.scss";
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -19,13 +21,6 @@ interface DropdownProps {
     direction?: DropdownDirection;
 }
 
-const mapDirectionToClass: Record<DropdownDirection, string> = {
-    "top-left": styles.optionsTopLeft,
-    "bottom-left": styles.optionsBottomLeft,
-    "top-right": styles.optionsTopRight,
-    "bottom-right": styles.optionsBottomRight,
-};
-
 export function Dropdown(props: DropdownProps) {
     const { className, trigger, items, direction = "bottom-right" } = props;
 
@@ -35,8 +30,11 @@ export function Dropdown(props: DropdownProps) {
     );
 
     return (
-        <Menu as="div" className={classNames(styles.dropdown, {}, [className])}>
-            <Menu.Button className={styles.btn}>{trigger}</Menu.Button>
+        <Menu
+            as="div"
+            className={classNames("", {}, [className, popupStyles.popup])}
+        >
+            <Menu.Button className={popupStyles.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(styles.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
                     const content = ({ active }: { active: boolean }) => (
@@ -45,7 +43,7 @@ export function Dropdown(props: DropdownProps) {
                             disabled={item.disabled}
                             onClick={item.onClick}
                             className={classNames(styles.item, {
-                                [styles.active]: active,
+                                [popupStyles.active]: active,
                             })}
                         >
                             {item.content}
