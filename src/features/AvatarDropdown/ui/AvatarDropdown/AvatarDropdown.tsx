@@ -11,7 +11,6 @@ import {
     isUserManager,
     userActions,
 } from "entities/User";
-import styles from "./AvatarDropdown.module.scss";
 
 interface AvatarDropdownProps {
     className?: string;
@@ -38,7 +37,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
     return (
         <Dropdown
-            className={classNames(styles.avatarDropdown, {}, [className])}
+            className={classNames("", {}, [className])}
             direction="bottom-left"
             items={[
                 ...(isAdminPanelAvailable

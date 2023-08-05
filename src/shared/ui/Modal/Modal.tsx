@@ -1,7 +1,8 @@
 import { useTheme } from "app/providers/ThemeProvider";
-import React, { FC, ReactNode, useCallback, useEffect, useState } from "react";
+import { FC, ReactNode, useCallback, useEffect, useState } from "react";
 import { classNames, Mods } from "shared/lib/classNames/classNames";
 import { Portal } from "../Portal/Portal";
+import { Overlay } from "../Overlay/Overlay";
 import styles from "./Modal.module.scss";
 
 interface ModalProps {
@@ -26,10 +27,6 @@ export const Modal: FC<ModalProps> = (props) => {
     const closeHandler = useCallback(() => {
         onClose?.();
     }, [onClose]);
-
-    const onContentClick = (e: React.MouseEvent) => {
-        e.stopPropagation();
-    };
 
     const onKeyDown = useCallback(
         (e: KeyboardEvent) => {
@@ -73,14 +70,8 @@ export const Modal: FC<ModalProps> = (props) => {
                     "app_modal",
                 ])}
             >
-                <div className={styles.overlay} onClick={closeHandler}>
-                    <div
-                        className={classNames(styles.content)}
-                        onClick={onContentClick}
-                    >
-                        {children}
-                    </div>
-                </div>
+                <Overlay onClick={closeHandler} />
+                <div className={classNames(styles.content)}>{children}</div>
             </div>
         </Portal>
     );
