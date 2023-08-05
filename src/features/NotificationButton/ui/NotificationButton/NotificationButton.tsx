@@ -7,6 +7,7 @@ import { NotificationList } from "entities/Notification";
 import NotificationIcon from "shared/assets/icons/icon-notification.svg";
 import { Drawer } from "shared/ui/Drawer/Drawer";
 import { classNames } from "shared/lib/classNames/classNames";
+import { AnimationProvider } from "shared/lib/components/AnimationProvider";
 import styles from "./NotificationButton.module.scss";
 
 interface NotificationButtonProps {
@@ -46,9 +47,11 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             </BrowserView>
             <MobileView>
                 {trigger}
-                <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
-                    <NotificationList />
-                </Drawer>
+                <AnimationProvider>
+                    <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
+                        <NotificationList />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
         </div>
     );
