@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { Country } from "entities/Country";
-import { Currency } from "entities/Currency";
-import Avatar from "shared/assets/tests/avatar.jpg";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { Country } from "@/entities/Country";
+import { Currency } from "@/entities/Currency";
+import Avatar from "@/shared/assets/tests/avatar.jpg";
 import { ProfileCard } from "./ProfileCard";
 
 /* Не проходил скриншотный тест для ProfileCard_primary. 

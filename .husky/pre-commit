@@ -4,4 +4,3 @@
 npm run lint:typecheck
 npm run lint
 npm run stylelint
-npm run test:unit

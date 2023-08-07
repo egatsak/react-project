@@ -13,6 +13,7 @@
 }
 
 .content {
+    z-index: var(--modal-z-index);
     border-radius: 12px;
     padding: 20px;
     max-width: 60%;
@@ -23,11 +24,9 @@
 
 .opened {
     z-index: var(--modal-z-index);
-
-    /* pointer-events: auto; */
-
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 
     .content {
         transform: scale(1);

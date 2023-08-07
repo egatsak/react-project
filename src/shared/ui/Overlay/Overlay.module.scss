@@ -1,6 +1,6 @@
 .overlay {
     position: fixed;
-    z-index: 99;
+    z-index: var(--overlay-z-index);
     display: flex;
     align-items: center;
     justify-content: center;
