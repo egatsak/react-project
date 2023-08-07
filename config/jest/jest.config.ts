@@ -39,7 +39,7 @@ export default {
     moduleNameMapper: {
         "\\.s?css$": "identity-obj-proxy",
         "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
-        /*         "@": "<rootDir>src", */
+        "^@/(.*)$": "<rootDir>src/$1",
     },
 
     // The root directory that Jest should scan for tests and modules within
