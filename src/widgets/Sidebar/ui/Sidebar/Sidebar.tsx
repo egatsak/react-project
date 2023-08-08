@@ -23,7 +23,6 @@ export const Sidebar = memo((props: SidebarProps) => {
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
-    console.log(styles, styles.sidebar, styles.collapsed, className);
 
     const itemsList = useMemo(
         () =>
