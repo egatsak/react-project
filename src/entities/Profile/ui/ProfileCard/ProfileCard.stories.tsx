@@ -11,7 +11,7 @@ import { ProfileCard } from "./ProfileCard";
 Решил проблему, просто захардкодив ссылку, на внешний ресурс. */
 
 export default {
-    title: "entities/ProfileCard",
+    title: "entities/Profile/ProfileCard",
     component: ProfileCard,
     argTypes: {
         backgroundColor: { control: "color" },

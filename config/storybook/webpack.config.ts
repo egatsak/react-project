@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import path from "path";
 import webpack, { DefinePlugin, RuleSetRule } from "webpack";
 import { buildCssLoader } from "../build/loaders/buildCssLoaders";
@@ -16,9 +17,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
     config.resolve!.modules!.unshift(paths.src);
     config.resolve!.extensions!.push(".ts", ".tsx");
+    config.resolve!.alias = {
+        ...config.resolve!.alias,
+        "@": paths.src,
+    };
 
     if (config && config.module && config.module.rules) {
-        // eslint-disable-next-line no-param-reassign
         config.module.rules = (
             config.module.rules as webpack.RuleSetRule[]
         ).map((rule: RuleSetRule) => {
