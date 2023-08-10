@@ -99,7 +99,7 @@ module.exports = {
             },
         ],
         "no-undef": "off",
-        "egatsak-fsd-plugin/path-checker": "error",
+        "egatsak-fsd-plugin/path-checker": ["error", { alias: "@" }],
     },
     overrides: [
         {
