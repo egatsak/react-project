@@ -6,7 +6,6 @@ import { getUserAuthData } from "@/entities/User";
 import { LoginModal } from "@/features/AuthByUsername";
 import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { NotificationButton } from "@/features/NotificationButton";
-import { RoutePath } from "@/shared/config/routeConfig/routeConfig";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
 import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
@@ -14,6 +13,7 @@ import { HStack } from "@/shared/ui/Stack";
 import { Text, TextTheme } from "@/shared/ui/Text/Text";
 
 import styles from "./Navbar.module.scss";
+import { RoutePath } from "@/shared/const/router";
 
 interface NavbarProps {
     className?: string;
