@@ -100,7 +100,17 @@ module.exports = {
         ],
         "no-undef": "off",
         "egatsak-fsd-plugin/path-checker": ["error", { alias: "@" }],
-        "egatsak-fsd-plugin/public-api-imports": ["error", { alias: "@" }],
+        "egatsak-fsd-plugin/public-api-imports": [
+            "error",
+            {
+                alias: "@",
+                testFilesPatterns: [
+                    "**/*.story.*",
+                    "**/*.test.*",
+                    "**/StoreDecorator.tsx",
+                ],
+            },
+        ],
     },
     overrides: [
         {
