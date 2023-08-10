@@ -4,8 +4,12 @@ import {
     createSlice,
 } from "@reduxjs/toolkit";
 import { StateSchema } from "@/app/providers/StoreProvider";
-import { Article, ArticleView } from "@/entities/Article";
-import { ArticleSortField, ArticleType } from "@/entities/Article/";
+import {
+    Article,
+    ArticleView,
+    ArticleSortField,
+    ArticleType,
+} from "@/entities/Article";
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from "@/shared/const/localStorage";
 import { SortOrder } from "@/shared/types";
 import { ArticlesPageSchema } from "../types/articlesPageSchema";

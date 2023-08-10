@@ -1,23 +1,20 @@
 import { memo, useCallback } from "react";
-import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Input } from "@/shared/ui/Input/Input";
-import { Button } from "@/shared/ui/Button/Button";
 import {
     DynamicModuleLoader,
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { Button } from "@/shared/ui/Button/Button";
+import { Input } from "@/shared/ui/Input/Input";
 import { HStack } from "@/shared/ui/Stack";
+import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import {
     addCommentFormActions,
     addCommentFormReducer,
 } from "../../model/slice/addCommentFormSlice";
-import {
-    getAddCommentFormError,
-    getAddCommentFormText,
-} from "../../model/selectors/addCommentFormSelectors";
 
 import styles from "./AddCommentForm.module.scss";
 
@@ -35,7 +32,6 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     const { t } = useTranslation("translation");
     const dispatch = useAppDispatch();
     const text = useSelector(getAddCommentFormText);
-    const error = useSelector(getAddCommentFormError);
 
     const onCommentTextChange = useCallback(
         (value: string) => {

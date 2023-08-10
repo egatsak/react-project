@@ -100,6 +100,7 @@ module.exports = {
         ],
         "no-undef": "off",
         "egatsak-fsd-plugin/path-checker": ["error", { alias: "@" }],
+        "egatsak-fsd-plugin/public-api-imports": ["error", { alias: "@" }],
     },
     overrides: [
         {

@@ -1,6 +1,3 @@
-import { Dispatch } from "@reduxjs/toolkit";
-import axios from "axios";
-import { StateSchema } from "@/app/providers/StoreProvider";
 import { userActions } from "@/entities/User";
 import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
 import { loginByUsername } from "./loginByUsername";
@@ -41,7 +38,7 @@ describe("THUNK", () => {
         expect(mockedAxios.post).toHaveBeenCalled();
         expect(result.meta.requestStatus).toBe("rejected");
         expect(result.payload).toBe("Error fetching users!");
-    }); */
+    }); */ /*  */
 
     test("success login", async () => {
         const userValue = { username: "user1", id: "1" };
