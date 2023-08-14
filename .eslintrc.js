@@ -10,6 +10,7 @@ module.exports = {
         "plugin:i18next/recommended",
         "plugin:storybook/recommended",
         /*         "plugin:react-hooks/recommended", */
+        // "plugin:import/recommended", TODO!!!!!!
         "plugin:prettier/recommended",
     ],
     parser: "@typescript-eslint/parser",
@@ -26,6 +27,8 @@ module.exports = {
         "i18next",
         "react-hooks",
         "egatsak-fsd-plugin",
+        "unused-imports",
+        // eslint
     ],
     rules: {
         "react/jsx-indent": ["error", 4],
@@ -118,6 +121,7 @@ module.exports = {
                 ],
             },
         ],
+        "unused-imports/no-unused-imports": "error",
     },
     overrides: [
         {
