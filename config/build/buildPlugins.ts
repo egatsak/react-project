@@ -15,14 +15,12 @@ export function buildPlugins({
     apiUrl,
     project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
+    const isProd = !isDev;
+
     const config = [
         new webpack.ProgressPlugin(),
         new HTMLWebpackPlugin({
             template: paths.html,
-        }),
-        new MiniCssExtractPlugin({
-            filename: "css/[name].[contenthash:8].css",
-            chunkFilename: "css/[name].[contenthash:8].css",
         }),
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
@@ -32,9 +30,6 @@ export function buildPlugins({
         new BundleAnalyzerPlugin({
             analyzerMode: isAnalyze ? "server" : "disabled",
             openAnalyzer: false,
-        }),
-        new CopyPlugin({
-            patterns: [{ from: paths.locales, to: paths.buildLocales }],
         }),
         new CircularDependencyPlugin({
             exclude: /node_modules/,
@@ -54,6 +49,20 @@ export function buildPlugins({
     if (isDev) {
         config.push(new webpack.HotModuleReplacementPlugin());
         config.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+    }
+
+    if (isProd) {
+        config.push(
+            new MiniCssExtractPlugin({
+                filename: "css/[name].[contenthash:8].css",
+                chunkFilename: "css/[name].[contenthash:8].css",
+            })
+        );
+        config.push(
+            new CopyPlugin({
+                patterns: [{ from: paths.locales, to: paths.buildLocales }],
+            })
+        );
     }
 
     return config.filter(Boolean);

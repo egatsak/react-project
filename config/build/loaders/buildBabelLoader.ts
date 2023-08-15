@@ -12,17 +12,9 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
         use: {
             loader: "babel-loader",
             options: {
+                cacheDirectory: true,
                 presets: ["@babel/preset-env"],
                 plugins: [
-                    [
-                        "i18next-extract",
-                        {
-                            locales: ["en", "ru"],
-                            keyAsDefaultValue: true,
-                            saveMissing: true,
-                            outputPath: "public/locales/{{locale}}/{{ns}}.json",
-                        },
-                    ],
                     [
                         "@babel/plugin-transform-typescript",
                         {
@@ -30,12 +22,13 @@ export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
                         },
                     ],
                     "@babel/plugin-transform-runtime",
-                    isTsx && [
-                        babelRemovePropsPlugin,
-                        {
-                            props: ["data-testid"],
-                        },
-                    ],
+                    isTsx &&
+                        !isDev && [
+                            babelRemovePropsPlugin,
+                            {
+                                props: ["data-testid"],
+                            },
+                        ],
                     isDev && require.resolve("react-refresh/babel"),
                 ].filter(Boolean),
             },
