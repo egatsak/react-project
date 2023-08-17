@@ -1,11 +1,9 @@
 import { FC } from "react";
-import { useDispatch } from "react-redux";
 import { Button } from "@/shared/ui/Button/Button";
 import { useCounterActions } from "../model/slice/counterSlice";
 import { useCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 
 export const Counter: FC = () => {
-    const dispatch = useDispatch();
     const counterValue = useCounterValue();
 
     const { add, decrement, increment } = useCounterActions();
@@ -24,6 +22,9 @@ export const Counter: FC = () => {
     return (
         <div>
             <h1 data-testid="value-title">{counterValue}</h1>
+            <Button onClick={handleAddFive} data-testid="add5-btn">
+                +5
+            </Button>
             <Button onClick={handleIncrement} data-testid="increment-btn">
                 +
             </Button>
