@@ -6,7 +6,6 @@ declare module "*.scss" {
     export = classNames;
 }
 
-declare module "storybook-addon-mock";
 declare module "*.png";
 declare module "*.jpg";
 declare module "*.jpeg";
