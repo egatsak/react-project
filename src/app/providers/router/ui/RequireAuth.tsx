@@ -18,7 +18,6 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
         if (!roles) {
             return true;
         }
-
         return roles.some((role) => userRoles?.includes(role));
     }, [roles, userRoles]);
 
@@ -33,11 +32,13 @@ export function RequireAuth({ children, roles }: RequireAuthProps) {
     }
 
     if (!hasRequiredRoles) {
-        <Navigate
-            to={getRouteForbidden()}
-            state={{ from: location }}
-            replace
-        />;
+        return (
+            <Navigate
+                to={getRouteForbidden()}
+                state={{ from: location }}
+                replace
+            />
+        );
     }
 
     return children;

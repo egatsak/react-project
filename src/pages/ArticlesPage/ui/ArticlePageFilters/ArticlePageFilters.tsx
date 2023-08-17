@@ -12,7 +12,7 @@ import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
 import { ArticleSortField, ArticleType, ArticleView } from "@/entities/Article";
 import { Card } from "@/shared/ui/Card/Card";
 import { Input } from "@/shared/ui/Input/Input";
-import { SortOrder } from "@/shared/types";
+import { SortOrder } from "@/shared/types/sort";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import {

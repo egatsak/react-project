@@ -6,7 +6,7 @@ export enum AppRoutes {
     ARTICLE_DETAILS = "article_details",
     ARTICLE_CREATE = "article_create",
     ARTICLE_EDIT = "article_edit",
-    ADMIN_PANEL = "admin_panel",
+    ADMIN_PANEL = "admin",
     FORBIDDEN = "forbidden",
     NOT_FOUND = "not_found",
 }

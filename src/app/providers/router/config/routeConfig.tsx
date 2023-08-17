@@ -20,6 +20,7 @@ import {
     getRouteProfile,
 } from "@/shared/const/router";
 import type { AppRouteProps } from "@/shared/types/router";
+import { ForbiddenPage } from "@/pages/ForbiddenPage";
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
@@ -63,7 +64,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     },
     [AppRoutes.FORBIDDEN]: {
         path: getRouteForbidden(),
-        element: <AdminPanelPage />,
+        element: <ForbiddenPage />,
     },
     [AppRoutes.NOT_FOUND]: {
         path: "*",

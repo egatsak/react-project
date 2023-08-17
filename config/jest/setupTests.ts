@@ -1,5 +1,6 @@
 import "@testing-library/jest-dom";
 import "regenerator-runtime/runtime";
+import "whatwg-fetch";
 
 /* jest.mock("react-i18next", () => ({
     useTranslation: () => ({
