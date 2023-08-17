@@ -31,6 +31,9 @@
         "postinstall": "node ./scripts/clearCache.js",
         "prepare": "husky install"
     },
+    "lint-staged": {
+        "**/*.{ts,tsx}": "node ./node_modules/eslint/bin/eslint.js"
+    },
     "keywords": [],
     "author": "egatsak",
     "license": "ISC",
@@ -91,6 +94,7 @@
         "jest": "^27.5.1",
         "jest-html-reporters": "^3.0.10",
         "json-server": "^0.17.0",
+        "lint-staged": "^14.0.0",
         "loki": "^0.28.1",
         "mini-css-extract-plugin": "^2.5.3",
         "react-refresh": "^0.12.0",
