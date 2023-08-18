@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+npm run lint:typecheck
 npx lint-staged
+npm run stylelint
+npm run test:unit

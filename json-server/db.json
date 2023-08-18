@@ -1,33 +1,41 @@
 {
   "users": [
-      {
-          "id": "1",
-          "username": "admin",
-          "password": "123",
-          "roles": ["ADMIN"],
-          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-      },
-      {
-          "id": "2",
-          "username": "user",
-          "password": "123",
-          "roles": ["USER"],
-          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-      },
-      {
-          "id": "3",
-          "username": "manager",
-          "password": "123",
-          "roles": ["MANAGER"],
-          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-      },
-      {
-          "id": "4",
-          "username": "testuser",
-          "password": "123",
-          "roles": ["ADMIN"],
-          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-      }
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "123",
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+    },
+    {
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+    }
   ],
   "notifications": [
     {
@@ -702,6 +710,59 @@
           ]
         }
       ]
+    },
+    {
+      "title": "JS12 News",
+      "subtitle": "News in JS 2023",
+      "img": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
+      "views": 1,
+      "user": {
+        "id": "1",
+        "username": "testuser",
+        "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F",
+        "roles": [
+          "USER"
+        ]
+      },
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "A9fLlYD"
+    },
+    {
+      "title": "JS12 News",
+      "subtitle": "News in JS 2023",
+      "img": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
+      "views": 1,
+      "user": {
+        "id": "1",
+        "username": "testuser",
+        "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F",
+        "roles": [
+          "USER"
+        ]
+      },
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "gpFSowj"
+    },
+    {
+      "title": "test article",
+      "subtitle": "News in JS 2023",
+      "img": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
+      "views": 1,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "QoexzDC"
     }
   ],
   "profile": [
@@ -725,6 +786,28 @@
       "country": "Georgia",
       "city": "Kutaisi",
       "username": "user",
+      "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+    },
+    {
+      "id": "3",
+      "first": "Lech",
+      "lastname": "Kaczynski",
+      "age": 32,
+      "currency": "GEL",
+      "country": "Georgia",
+      "city": "Batumi",
+      "username": "manager",
+      "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+    },
+    {
+      "id": "4",
+      "first": "Ivan",
+      "lastname": "Dorn",
+      "age": 35,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
     }
   ],
