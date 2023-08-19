@@ -13,6 +13,9 @@ describe("User visits article page", () => {
         cy.deleteArticle(currentArticleId);
     });
 
+    // describe("With API", () => {});
+    // describe("With stubs", () => {});
+
     it("and observes article content", () => {
         cy.getByTestId("ArticleDetails.Info").should("exist");
     });
@@ -29,6 +32,16 @@ describe("User visits article page", () => {
     });
 
     it("and rates the article", () => {
+        cy.getByTestId("ArticleDetails.Info");
+        cy.getByTestId("RatingCard").scrollIntoView();
+        cy.setRate(5, "test-feedback");
+        cy.get("[data-selected=true]").should("have.length", 5);
+    });
+
+    it("and rates the article (on stubs)", () => {
+        cy.intercept("GET", "**/articles/*", {
+            fixture: "article-details.json",
+        });
         cy.getByTestId("ArticleDetails.Info");
         cy.getByTestId("RatingCard").scrollIntoView();
         cy.setRate(5, "test-feedback");
