@@ -13,11 +13,11 @@ export default (env: BuildEnv) => {
         buildLocales: path.resolve(__dirname, "build", "locales"),
     };
 
-    const mode = env.mode || "development";
-    const PORT = +env.port || 4000;
-    const isAnalyze = env.analyze;
+    const mode = env?.mode || "development";
+    const PORT = env ? +env.port : 4000;
+    const isAnalyze = env?.analyze;
 
-    const apiUrl = env.apiUrl || "http://localhost:8000";
+    const apiUrl = env?.apiUrl || "http://localhost:8000";
 
     const isDev = mode === "development";
 

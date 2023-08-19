@@ -33,7 +33,7 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-        "**/*.{ts,tsx}": "node ./node_modules/eslint/bin/eslint.js"
+        "**/*.{ts,tsx}": "node ./node_modules/eslint/bin/eslint.js --fix"
     },
     "keywords": [],
     "author": "egatsak",
