@@ -17,6 +17,7 @@
         "lint": "node ./node_modules/eslint/bin/eslint.js \"**/*.{ts,tsx}\"",
         "lint:fix": "node ./node_modules/eslint/bin/eslint.js \"**/*.{ts,tsx}\" --fix",
         "lint:typecheck": "tsc --project ./tsconfig.json --noEmit --skipLibCheck",
+        "prettier": "npx prettier --write **/*.{ts,tsx,js,json,md}",
         "stylelint": "npx stylelint \"**/*.scss\"",
         "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
         "test:e2e": "cypress open",
@@ -33,7 +34,10 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-        "**/*.{ts,tsx}": "node ./node_modules/eslint/bin/eslint.js --fix"
+        "**/*.{ts,tsx}": [
+            "npx prettier --list-different --write",
+            "node ./node_modules/eslint/bin/eslint.js --fix"
+        ]
     },
     "keywords": [],
     "author": "egatsak",

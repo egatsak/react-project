@@ -11,7 +11,8 @@ module.exports = {
         "plugin:storybook/recommended",
         /*         "plugin:react-hooks/recommended", */
         // "plugin:import/recommended", TODO!!!!!!
-        "plugin:prettier/recommended",
+        // "plugin:prettier/recommended",
+        "prettier",
     ],
     parser: "@typescript-eslint/parser",
     parserOptions: {
@@ -31,8 +32,8 @@ module.exports = {
         // eslint
     ],
     rules: {
-        "react/jsx-indent": ["error", 4],
-        "react/jsx-indent-props": [2, 4],
+        // "react/jsx-indent": ["error", 4],
+        // "react/jsx-indent-props": [2, 4],
         /*         "no-tabs": ["error", { allowIndentationTabs: true }], */
         /* indent: [2, 4, { SwitchCase: 0 }], */
         "react/jsx-filename-extension": [
@@ -126,6 +127,8 @@ module.exports = {
             },
         ],
         "unused-imports/no-unused-imports": "error",
+        "react/jsx-max-props-per-line": ["error", { maximum: 4 }],
+        "arrow-body-style": "off",
     },
     overrides: [
         {
@@ -139,6 +142,7 @@ module.exports = {
             files: ["src/**/*.{test,stories}.{ts,tsx}", "config/**/*{ts,tsx}"],
             rules: {
                 "import/no-extraneous-dependencies": "off",
+                "react/jsx-props-no-spreading": "off",
             },
         },
     ],

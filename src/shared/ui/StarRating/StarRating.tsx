@@ -44,26 +44,24 @@ export const StarRating = memo((props: StarRatingProps) => {
             data-testid="StarRating"
             className={classNames(styles.starRating, {}, [className])}
         >
-            {stars.map((starNumber) => {
-                return (
-                    <Icon
-                        Svg={StarIcon}
-                        key={starNumber}
-                        className={classNames(styles.starIcon, {
-                            [styles.normal]: currentStarsCount < starNumber,
-                            [styles.hover]: currentStarsCount >= starNumber,
-                            [styles.selected]: isSelected,
-                        })}
-                        width={size}
-                        height={size}
-                        onMouseLeave={onLeave}
-                        onMouseEnter={onHover(starNumber)}
-                        onClick={onClick(starNumber)}
-                        data-testid={`StarRating.${starNumber}`}
-                        data-selected={currentStarsCount >= starNumber}
-                    />
-                );
-            })}
+            {stars.map((starNumber) => (
+                <Icon
+                    Svg={StarIcon}
+                    key={starNumber}
+                    className={classNames(styles.starIcon, {
+                        [styles.normal]: currentStarsCount < starNumber,
+                        [styles.hover]: currentStarsCount >= starNumber,
+                        [styles.selected]: isSelected,
+                    })}
+                    width={size}
+                    height={size}
+                    onMouseLeave={onLeave}
+                    onMouseEnter={onHover(starNumber)}
+                    onClick={onClick(starNumber)}
+                    data-testid={`StarRating.${starNumber}`}
+                    data-selected={currentStarsCount >= starNumber}
+                />
+            ))}
         </div>
     );
 });

@@ -1,1 +1,6 @@
 *.yaml
+build
+coverage
+node_modules
+*.css
+*.scss
