@@ -1,6 +1,12 @@
-const fs = require("fs");
-const path = require("path");
+const fs = require("node:fs");
+const path = require("node:path");
+const https = require("node:https");
 const jsonServer = require("json-server");
+
+const options = {
+    key: fs.readFileSync(path.resolve(__dirname, "key.pem")),
+    cert: fs.readFileSync(path.resolve(__dirname, "cert.pem")),
+};
 
 const server = jsonServer.create();
 
@@ -22,12 +28,12 @@ server.post("/login", (req, res) => {
     try {
         const { username, password } = req.body;
         const db = JSON.parse(
-            fs.readFileSync(path.resolve(__dirname, "db.json"), "UTF-8")
+            fs.readFileSync(path.resolve(__dirname, "db.json"), "UTF-8"),
         );
         const { users = [] } = db;
 
         const userFromBd = users.find(
-            (user) => user.username === username && user.password === password
+            (user) => user.username === username && user.password === password,
         );
 
         if (userFromBd) {
@@ -60,6 +66,15 @@ server.use(router);
     })
 ); */
 
-server.listen(8000, () => {
-    console.log("server is running on 8000 port");
+const httpsServer = https.createServer(options, server);
+
+const HTTPS_PORT = 443;
+const HTTP_PORT = 8000;
+
+httpsServer.listen(HTTPS_PORT, () => {
+    console.log("https server is running on 443 port");
+});
+
+server.listen(HTTP_PORT, () => {
+    console.log("http server is running on 8000 port");
 });
