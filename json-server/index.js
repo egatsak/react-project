@@ -1,6 +1,8 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const https = require("node:https");
+const http = require("node:http");
+
 const jsonServer = require("json-server");
 
 const options = {
@@ -67,14 +69,15 @@ server.use(router);
 ); */
 
 const httpsServer = https.createServer(options, server);
+const httpServer = http.createServer(server);
 
 const HTTPS_PORT = 8443;
 const HTTP_PORT = 8000;
 
 httpsServer.listen(HTTPS_PORT, () => {
-    console.log("https server is running on 443 port");
+    console.log(`https server is running on port ${8443}`);
 });
 
-server.listen(HTTP_PORT, () => {
-    console.log("http server is running on 8000 port");
+httpServer.listen(HTTP_PORT, () => {
+    console.log(`http server is running on port ${8443}`);
 });
