@@ -1,5 +1,7 @@
-module.exports = (layer, componentName) => `import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+module.exports = (
+    layer,
+    componentName,
+) => `import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ${componentName} } from './${componentName}';
 
