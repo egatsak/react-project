@@ -7,11 +7,12 @@ import { ArticleRating } from "@/features/ArticleRating";
 import { Page } from "@/widgets/Page";
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { getFeatureFlag } from "@/shared/lib/features";
+import { toggleFeatures } from "@/shared/lib/features";
 import {
     DynamicModuleLoader,
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { Card } from "@/shared/ui/Card/Card";
 import { VStack } from "@/shared/ui/Stack";
 
 import { articleDetailsPageReducer } from "../../model/slice";
@@ -19,7 +20,6 @@ import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetails
 import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 import styles from "./ArticleDetailsPage.module.scss";
-import { Counter } from "@/entities/Counter";
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -33,8 +33,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
     const { className } = props;
     const { t } = useTranslation("article");
     const { id } = useParams<{ id: string }>();
-    const isArticleRatingEnabled = getFeatureFlag("isArticleRatingEnabled");
-    const isCounterEnabled = getFeatureFlag("isCounterEnabled");
 
     if (!id) {
         return (
@@ -48,6 +46,18 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         );
     }
 
+    const articleRatingCard = toggleFeatures({
+        name: "isArticleRatingEnabled",
+        on: () => <ArticleRating articleId={id} />,
+        off: () => (
+            <Card>
+                {t("Article ratings will be introduced soon!", {
+                    ns: "article",
+                })}
+            </Card>
+        ),
+    });
+
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page
@@ -58,8 +68,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {isCounterEnabled && <Counter />}
-                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+                    {articleRatingCard}
                     <ArticleRecommendationsList
                         className={styles.recommendations}
                     />

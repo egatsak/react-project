@@ -129,6 +129,7 @@ module.exports = {
         "unused-imports/no-unused-imports": "error",
         "react/jsx-max-props-per-line": ["error", { maximum: 4 }],
         "arrow-body-style": "off",
+        "react/no-unstable-nested-components": "warn",
     },
     overrides: [
         {
