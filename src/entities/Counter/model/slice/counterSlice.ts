@@ -1,6 +1,6 @@
 import { PayloadAction } from "@reduxjs/toolkit";
 import { CounterSchema } from "../types/counterSchema";
-import { buildSlice } from "@/shared/store";
+import { buildSlice } from "@/shared/lib/store";
 
 const initialState: CounterSchema = {
     value: 0,

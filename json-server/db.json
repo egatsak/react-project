@@ -1,49 +1,69 @@
 {
   "users": [
-    {
-        "id": "1",
-        "username": "admin",
-        "password": "123",
-        "features": {
-            "isArticleRatingEnabled": true,
-            "isCounterEnabled": true
-        },
-        "roles": ["ADMIN"],
-        "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-    },
-    {
-        "id": "2",
-        "username": "user",
-        "password": "123",
-        "features": {
-            "isArticleRatingEnabled": false,
-            "isCounterEnabled": false
-        },
-        "roles": ["USER"],
-        "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-    },
-    {
-        "id": "3",
-        "username": "manager",
-        "password": "123",
-        "features": {
-            "isArticleRatingEnabled": false,
-            "isCounterEnabled": true
-        },
-        "roles": ["MANAGER"],
-        "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-    },
-    {
-        "id": "4",
-        "username": "testuser",
-        "password": "123",
-        "features": {
-            "isArticleRatingEnabled": true,
-            "isCounterEnabled": false
-        },
-        "roles": ["ADMIN"],
-        "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
-    }
+      {
+          "id": "1",
+          "username": "admin",
+          "password": "123",
+          "features": {
+              "isArticleRatingEnabled": true,
+              "isCounterEnabled": true
+          },
+          "jsonSettings": {
+              "theme": "app_dark_theme",
+              "isFirstVisit": true,
+              "hasSettingsPageBeenVisited": false
+          },
+          "roles": ["ADMIN"],
+          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+      },
+      {
+          "id": "2",
+          "username": "user",
+          "password": "123",
+          "jsonSettings": {
+              "theme": "app_dark_theme",
+              "isFirstVisit": true,
+              "hasSettingsPageBeenVisited": false
+          },
+          "features": {
+              "isArticleRatingEnabled": false,
+              "isCounterEnabled": false
+          },
+          "roles": ["USER"],
+          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+      },
+      {
+          "id": "3",
+          "username": "manager",
+          "password": "123",
+          "jsonSettings": {
+              "theme": "app_dark_theme",
+              "isFirstVisit": true,
+              "hasSettingsPageBeenVisited": false
+          },
+          "features": {
+              "isArticleRatingEnabled": false,
+              "isCounterEnabled": true
+          },
+          "roles": ["MANAGER"],
+          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+      },
+      {
+          "id": "4",
+          "username": "testuser",
+          "password": "123",
+          "jsonSettings": {
+              "theme": "app_dark_theme",
+              "isFirstVisit": true,
+              "hasSettingsPageBeenVisited": false
+          },
+          "features": {
+              "isArticleRatingEnabled": true,
+              "isCounterEnabled": false
+          },
+          "roles": ["ADMIN"],
+          "avatar": "https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=740&t=st=1678878206~exp=1678878806~hmac=ff7478bd3b805663959f2187faa48a4fbc0051148c5ccdb48b1c9066f43d8253F"
+      }
   ],
   "notifications": [
     {
