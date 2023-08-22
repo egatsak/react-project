@@ -7,7 +7,7 @@ import { ArticleRating } from "@/features/ArticleRating";
 import { Page } from "@/widgets/Page";
 import { ArticleRecommendationsList } from "@/features/ArticleRecommendationsList";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { toggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures } from "@/shared/lib/features";
 import {
     DynamicModuleLoader,
     ReducersList,
@@ -46,18 +46,6 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
         );
     }
 
-    const articleRatingCard = toggleFeatures({
-        name: "isArticleRatingEnabled",
-        on: () => <ArticleRating articleId={id} />,
-        off: () => (
-            <Card>
-                {t("Article ratings will be introduced soon!", {
-                    ns: "article",
-                })}
-            </Card>
-        ),
-    });
-
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page
@@ -68,7 +56,17 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                 <VStack gap="16" max>
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
-                    {articleRatingCard}
+                    <ToggleFeatures
+                        feature="isArticleRatingEnabled"
+                        on={<ArticleRating articleId={id} />}
+                        off={
+                            <Card>
+                                {t("Article ratings will be introduced soon!", {
+                                    ns: "article",
+                                })}
+                            </Card>
+                        }
+                    />
                     <ArticleRecommendationsList
                         className={styles.recommendations}
                     />

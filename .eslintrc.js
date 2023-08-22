@@ -34,8 +34,8 @@ module.exports = {
     rules: {
         // "react/jsx-indent": ["error", 4],
         // "react/jsx-indent-props": [2, 4],
-        /*         "no-tabs": ["error", { allowIndentationTabs: true }], */
-        /* indent: [2, 4, { SwitchCase: 0 }], */
+        //  "no-tabs": ["error", { allowIndentationTabs: true }],
+        //  indent: [2, 4, { SwitchCase: 0 }],
         "react/jsx-filename-extension": [
             2,
             {
@@ -74,6 +74,7 @@ module.exports = {
                     "as",
                     "refName",
                     "border",
+                    "feature",
                 ],
                 /*  onlyAttribute: [""], */
             },
