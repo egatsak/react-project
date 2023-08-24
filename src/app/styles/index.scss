@@ -1,7 +1,7 @@
 @import "reset";
 @import "variables/global";
-@import "themes/light";
 @import "themes/dark";
+@import "themes/light";
 @import "themes/orange";
 
 .app,
@@ -16,22 +16,13 @@
     background: var(--bg-color);
 }
 
+.app_redesigned {
+    min-height: 100vh;
+    font: var(--font-m-redesigned);
+    color: var(--text-redesigned);
+    background: var(--bg-redesigned);
+}
+
 .content-page {
     display: flex;
-    flex: 1 1 auto;
-}
-
-*::-webkit-scrollbar {
-    width: 12px;
-    height: 8px;
-}
-
-*::-webkit-scrollbar-track {
-    background: var(--card-bg);
-}
-
-*::-webkit-scrollbar-thumb {
-    border: 2px solid var(--primary-color);
-    border-radius: 20px;
-    background-color: var(--inverted-primary-color);
 }

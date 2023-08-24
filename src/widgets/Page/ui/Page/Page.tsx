@@ -13,6 +13,7 @@ import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 import { TestProps } from "@/shared/types/tests";
 
 import styles from "./Page.module.scss";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface PageProps extends TestProps {
     className?: string;
@@ -25,7 +26,7 @@ export const Page = (props: PageProps) => {
         className,
         children,
         onScrollEnd,
-        "data-testid": dataTestId,
+        "data-testid": dataTestId = "Page",
     } = props;
 
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -33,7 +34,7 @@ export const Page = (props: PageProps) => {
     const dispatch = useAppDispatch();
     const { pathname } = useLocation();
     const scrollPosition = useSelector((state: StateSchema) =>
-        getUIScrollByPath(state, pathname)
+        getUIScrollByPath(state, pathname),
     );
 
     useInfiniteScroll({
@@ -51,19 +52,25 @@ export const Page = (props: PageProps) => {
             uiActions.setScrollPosition({
                 position: e.currentTarget.scrollTop,
                 path: pathname,
-            })
+            }),
         );
     }, 500);
+
+    const style = toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => styles.pageRedesigned,
+        off: () => styles.page,
+    });
 
     return (
         <main
             ref={wrapperRef}
-            className={classNames(styles.page, {}, [className])}
+            className={classNames(style, {}, [className])}
             onScroll={scrollHandler}
-            data-testid={dataTestId ?? "Page"}
+            data-testid={dataTestId}
         >
             {children}
-            {onScrollEnd && <div ref={triggerRef} />}
+            {onScrollEnd && <div className={styles.trigger} ref={triggerRef} />}
         </main>
     );
 };

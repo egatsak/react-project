@@ -14,6 +14,7 @@ import { HStack } from "@/shared/ui/Stack";
 import { Text, TextTheme } from "@/shared/ui/Text/Text";
 
 import styles from "./Navbar.module.scss";
+import { ToggleFeatures } from "@/shared/lib/features";
 
 interface NavbarProps {
     className?: string;
@@ -35,23 +36,42 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
     if (authData) {
         return (
-            <header className={classNames(styles.navbar, {}, [className])}>
-                <Text
-                    className={styles.appName}
-                    title={t("App", { ns: "translation" })}
-                    theme={TextTheme.INVERTED}
-                />
-                <AppLink
-                    to={getRouteArticleCreate()}
-                    theme={AppLinkTheme.SECONDARY}
-                >
-                    {t("Create new article", { ns: "translation" })}
-                </AppLink>
-                <HStack gap="16" className={styles.actions}>
-                    <NotificationButton />
-                    <AvatarDropdown />
-                </HStack>
-            </header>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <header
+                        className={classNames(styles.navbarRedesigned, {}, [
+                            className,
+                        ])}
+                    >
+                        <HStack gap="16" className={styles.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                }
+                off={
+                    <header
+                        className={classNames(styles.navbar, {}, [className])}
+                    >
+                        <Text
+                            className={styles.appName}
+                            title={t("App", { ns: "translation" })}
+                            theme={TextTheme.INVERTED}
+                        />
+                        <AppLink
+                            to={getRouteArticleCreate()}
+                            theme={AppLinkTheme.SECONDARY}
+                        >
+                            {t("Create new article", { ns: "translation" })}
+                        </AppLink>
+                        <HStack gap="16" className={styles.actions}>
+                            <NotificationButton />
+                            <AvatarDropdown />
+                        </HStack>
+                    </header>
+                }
+            />
         );
     }
 

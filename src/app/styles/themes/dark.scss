@@ -1,4 +1,3 @@
-/* :root, */
 .app_dark_theme {
     --bg-color: #090949;
     --inverted-bg-color: #e8e8ea;
@@ -6,6 +5,17 @@
     --secondary-color: #049604;
     --inverted-primary-color: #0232c2;
     --inverted-secondary-color: #0452ff;
+
+    // redesigned
+    --dark-bg-redesigned: #090f11;
+    --bg-redesigned: #0c1214;
+    --light-bg-redesigned: #151c1f;
+    --text-redesigned: #dbdbdb;
+    --hint-redesigned: #555;
+    --cancel-redesigned: #d95757;
+    --save-redesigned: #6cd98b;
+    --icon-redesigned: #74a2b2;
+    --accent-redesigned: #5ed3f3;
 
     // skeleton
     --skeleton-color: #1515ad;
@@ -23,3 +33,22 @@
     // dropdown
     --dropdown-bg: #17176d;
 }
+
+/*
+::-webkit-scrollbar {
+    width: 12px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--card-bg);
+
+    // background: red;
+}
+
+::-webkit-scrollbar-thumb {
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    background-color: var(--inverted-primary-color);
+}
+ */

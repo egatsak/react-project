@@ -1,5 +1,6 @@
 import { FC, memo, useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 
 import {
@@ -29,6 +30,7 @@ const reducers: ReducersList = {
 
 const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     const { className } = props;
+    useTranslation("article"); // TODO: refactor (if we delete this line, the namespace doesn't load )
     const dispatch = useAppDispatch();
     const [searchParams] = useSearchParams();
 

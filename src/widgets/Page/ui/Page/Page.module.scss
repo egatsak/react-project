@@ -1,8 +1,16 @@
 .page {
     flex-grow: 1;
-    flex-shrink: 1;
+    flex-shrink: 100;
     overflow-y: auto;
     padding: 20px 20px 20px 45px;
-    width: calc(100% - var(--sidebar-width));
     height: calc(100vh - var(--navbar-height));
+}
+
+.trigger {
+    margin: 10px;
+    height: 20px;
+}
+
+.pageRedesigned {
+    overflow-y: auto;
 }
