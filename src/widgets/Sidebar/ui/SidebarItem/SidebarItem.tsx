@@ -4,10 +4,16 @@ import { useSelector } from "react-redux";
 import { getUserAuthData } from "@/entities/User";
 
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "@/shared/ui/deprecated/AppLink/AppLink";
+import {
+    AppLink as AppLinkDeprecated,
+    AppLinkTheme,
+} from "@/shared/ui/deprecated/AppLink/AppLink";
 import { SidebarItemType } from "../../model/types/sidebar";
 
 import styles from "./SidebarItem.module.scss";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { AppLink } from "@/shared/ui/redesigned/AppLink/AppLink";
+import { Icon } from "@/shared/ui/redesigned/Icon/Icon";
 
 interface SidebarItemProps {
     item: SidebarItemType;
@@ -24,19 +30,36 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
     }
 
     return (
-        <div className={classNames(styles.sidebarItem, {})}>
-            <AppLink
-                theme={AppLinkTheme.SECONDARY}
-                to={item.path}
-                className={classNames(styles.item, {
-                    [styles.collapsed]: collapsed,
-                })}
-            >
-                <item.icon className={styles.icon} />
-                <span className={styles.link}>
-                    {t(item.text, { ns: "translation" })}
-                </span>
-            </AppLink>
-        </div>
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
+                <AppLink
+                    to={item.path}
+                    className={classNames(styles.itemRedesigned, {
+                        [styles.collapsedRedesigned]: collapsed,
+                    })}
+                    activeClassName={styles.active}
+                >
+                    <Icon Svg={item.icon} />
+                    <span className={styles.link}>
+                        {t(item.text, { ns: "translation" })}
+                    </span>
+                </AppLink>
+            }
+            off={
+                <AppLinkDeprecated
+                    theme={AppLinkTheme.SECONDARY}
+                    to={item.path}
+                    className={classNames(styles.item, {
+                        [styles.collapsed]: collapsed,
+                    })}
+                >
+                    <item.icon className={styles.icon} />
+                    <span className={styles.link}>
+                        {t(item.text, { ns: "translation" })}
+                    </span>
+                </AppLinkDeprecated>
+            }
+        />
     );
 });

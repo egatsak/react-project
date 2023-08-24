@@ -3,10 +3,10 @@ import { CSSProperties, FC, useMemo } from "react";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppImage } from "../AppImage/AppImage";
 import { Icon } from "../Icon/Icon";
-import UserIcon from "../../assets/icons/icon-avatar-unknown.svg";
+import { Skeleton } from "../Skeleton/Skeleton";
+import UserIcon from "../../../assets/icons/icon-avatar-unknown.svg";
 
 import styles from "./Avatar.module.scss";
-import { Skeleton } from "../Skeleton/Skeleton";
 
 interface AvatarProps {
     className?: string;

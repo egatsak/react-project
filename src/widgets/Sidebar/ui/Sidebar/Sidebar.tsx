@@ -14,7 +14,9 @@ import { SidebarItem } from "../SidebarItem/SidebarItem";
 
 import styles from "./Sidebar.module.scss";
 import { ToggleFeatures } from "@/shared/lib/features";
-import { AppLogo } from "@/shared/ui/deprecated/AppLogo/AppLogo";
+import { AppLogo } from "@/shared/ui/redesigned/AppLogo/AppLogo";
+import { Icon } from "@/shared/ui/redesigned/Icon/Icon";
+import ArrowIcon from "@/shared/assets/icons/icon-arrow-bottom-redesigned.svg";
 
 interface SidebarProps {
     className?: string;
@@ -50,11 +52,31 @@ export const Sidebar = memo((props: SidebarProps) => {
                     data-testid="sidebar"
                     className={classNames(
                         styles.sidebarRedesigned,
-                        { [styles.collapsed]: collapsed },
+                        { [styles.collapsedRedesigned]: collapsed },
                         [className],
                     )}
                 >
-                    <AppLogo className={styles.appLogo} />
+                    <AppLogo
+                        size={collapsed ? 30 : 50}
+                        className={styles.appLogo}
+                    />
+                    <VStack role="navigation" gap="8" className={styles.items}>
+                        {itemsList}
+                    </VStack>
+                    <Icon
+                        Svg={ArrowIcon}
+                        data-testid="sidebar-toggle"
+                        onClick={onToggle}
+                        className={styles.collapseBtn}
+                        clickable
+                    />
+                    <div className={styles.switchers}>
+                        <ThemeSwitcher />
+                        <LangSwitcher
+                            short={collapsed}
+                            className={styles.lang}
+                        />
+                    </div>
                 </section>
             }
             off={
@@ -76,7 +98,6 @@ export const Sidebar = memo((props: SidebarProps) => {
                     >
                         {collapsed ? ">" : "<"}
                     </Button>
-
                     <VStack role="navigation" gap="8" className={styles.items}>
                         {itemsList}
                     </VStack>

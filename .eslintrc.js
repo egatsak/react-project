@@ -11,7 +11,6 @@ module.exports = {
         "plugin:storybook/recommended",
         /*         "plugin:react-hooks/recommended", */
         // "plugin:import/recommended", TODO!!!!!!
-        // "plugin:prettier/recommended",
         "prettier",
     ],
     parser: "@typescript-eslint/parser",
@@ -29,13 +28,8 @@ module.exports = {
         "react-hooks",
         "egatsak-fsd-plugin",
         "unused-imports",
-        // eslint
     ],
     rules: {
-        // "react/jsx-indent": ["error", 4],
-        // "react/jsx-indent-props": [2, 4],
-        //  "no-tabs": ["error", { allowIndentationTabs: true }],
-        //  indent: [2, 4, { SwitchCase: 0 }],
         "react/jsx-filename-extension": [
             2,
             {
@@ -75,6 +69,8 @@ module.exports = {
                     "refName",
                     "border",
                     "feature",
+                    "color",
+                    "variant",
                 ],
                 /*  onlyAttribute: [""], */
             },

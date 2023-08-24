@@ -6,7 +6,6 @@
 }
 
 .sidebar {
-    justify-self: center;
     grid-area: sidebar;
     padding: 32px;
 }
@@ -15,6 +14,7 @@
     justify-self: center;
     grid-area: content;
     padding: 32px;
+    width: 100%;
     max-width: 1200px;
 }
 
