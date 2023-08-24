@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button/Button";
 import { getArticleDetailsData } from "@/entities/Article";
-import { HStack } from "@/shared/ui/Stack";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 import { getCanEditArticle } from "../../model/selectors/article";
 import { getRouteArticleEdit, getRouteArticles } from "@/shared/const/router";
 
@@ -47,5 +47,5 @@ export const ArticleDetailsPageHeader = memo(
                 )}
             </HStack>
         );
-    }
+    },
 );

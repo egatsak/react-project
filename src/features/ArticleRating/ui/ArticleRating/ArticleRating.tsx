@@ -7,7 +7,7 @@ import {
     useRateArticle,
 } from "../../api/articleRatingApi";
 import { getUserAuthData } from "@/entities/User";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton/Skeleton";
 
 export interface ArticleRatingProps {
     className?: string;
@@ -41,21 +41,21 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
                 console.log(error);
             }
         },
-        [articleId, rateArticleMutation, userData?.id]
+        [articleId, rateArticleMutation, userData?.id],
     );
 
     const onAccept = useCallback(
         (starsCount: number, feedback?: string) => {
             handleRateArticle(starsCount, feedback);
         },
-        [handleRateArticle]
+        [handleRateArticle],
     );
 
     const onCancel = useCallback(
         (starsCount: number) => {
             handleRateArticle(starsCount);
         },
-        [handleRateArticle]
+        [handleRateArticle],
     );
 
     if (isLoading) {

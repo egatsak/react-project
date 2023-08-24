@@ -12,8 +12,8 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { Card } from "@/shared/ui/Card/Card";
-import { VStack } from "@/shared/ui/Stack";
+import { Card } from "@/shared/ui/deprecated/Card/Card";
+import { VStack } from "@/shared/ui/deprecated/Stack";
 
 import { articleDetailsPageReducer } from "../../model/slice";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";

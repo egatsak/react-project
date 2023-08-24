@@ -7,14 +7,14 @@ import {
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text/Text";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
+import { Text, TextAlign, TextSize } from "@/shared/ui/deprecated/Text/Text";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton/Skeleton";
+import { Avatar } from "@/shared/ui/deprecated/Avatar/Avatar";
 import EyeIcon from "@/shared/assets/icons/icon-article-eye.svg";
 import CalendarIcon from "@/shared/assets/icons/icon-article-calendar.svg";
 
-import { Icon } from "@/shared/ui/Icon/Icon";
-import { HStack, VStack } from "@/shared/ui/Stack";
+import { Icon } from "@/shared/ui/deprecated/Icon/Icon";
+import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
 import { ArticleBlock } from "../../model/types/article";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import {

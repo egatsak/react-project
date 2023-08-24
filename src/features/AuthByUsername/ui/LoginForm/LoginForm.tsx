@@ -1,10 +1,10 @@
 import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { Input } from "@/shared/ui/Input/Input";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Input } from "@/shared/ui/deprecated/Input/Input";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button/Button";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text/Text";
 
 import {
     DynamicModuleLoader,
@@ -42,14 +42,14 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         (value: string) => {
             dispatch(loginActions.setUsername(value));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangePassword = useCallback(
         (value: string) => {
             dispatch(loginActions.setPassword(value));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onLoginClick = useCallback(async () => {

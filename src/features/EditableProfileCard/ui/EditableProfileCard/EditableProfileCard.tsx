@@ -2,7 +2,7 @@ import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text/Text";
 
 import { Currency } from "@/entities/Currency";
 import { Country } from "@/entities/Country";
@@ -13,7 +13,7 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { VStack } from "@/shared/ui/Stack";
+import { VStack } from "@/shared/ui/deprecated/Stack";
 import { ValidateProfileError } from "../../model/consts/consts";
 import { profileActions, profileReducer } from "../../model/slice/profileSlice";
 import { getProfileIsLoading } from "../../model/selectors/getProfileIsLoading/getProfileIsLoading";
@@ -55,7 +55,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
             "Firstname and lastname required",
             {
                 ns: "profile",
-            }
+            },
         ),
         [ValidateProfileError.NO_DATA]: t("Data is not specified", {
             ns: "profile",
@@ -72,56 +72,56 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         (value?: string) => {
             dispatch(profileActions.updateProfile({ first: value || "" }));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeLastname = useCallback(
         (value?: string) => {
             dispatch(profileActions.updateProfile({ lastname: value || "" }));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeAge = useCallback(
         (value?: string) => {
             dispatch(profileActions.updateProfile({ age: Number(value) || 0 }));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeCity = useCallback(
         (value?: string) => {
             dispatch(profileActions.updateProfile({ city: value || "" }));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeUsername = useCallback(
         (value?: string) => {
             dispatch(profileActions.updateProfile({ username: value || "" }));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeAvatar = useCallback(
         (value?: string) => {
             dispatch(profileActions.updateProfile({ avatar: value || "" }));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeCurrency = useCallback(
         (currency: Currency) => {
             dispatch(profileActions.updateProfile({ currency }));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onChangeCountry = useCallback(
         (country: Country) => {
             dispatch(profileActions.updateProfile({ country }));
         },
-        [dispatch]
+        [dispatch],
     );
     return (
         <DynamicModuleLoader reducers={reducers}>

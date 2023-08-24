@@ -1,7 +1,7 @@
 import { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Select, SelectOption } from "@/shared/ui/Select/Select";
+import { Select, SelectOption } from "@/shared/ui/deprecated/Select/Select";
 import { SortOrder } from "@/shared/types/sort";
 
 import styles from "./ArticleSortSelector.module.scss";
@@ -24,7 +24,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
             { value: "asc", content: t("asc", { ns: "translation" }) },
             { value: "desc", content: t("desc", { ns: "translation" }) },
         ],
-        [t]
+        [t],
     );
 
     const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
@@ -42,7 +42,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                 content: t("Views", { ns: "translation" }),
             },
         ],
-        [t]
+        [t],
     );
 
     return (

@@ -6,14 +6,14 @@ import { CommentList } from "@/entities/Comment";
 import { AddCommentForm } from "@/features/AddCommentForm";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { VStack } from "@/shared/ui/Stack";
-import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { VStack } from "@/shared/ui/deprecated/Stack";
+import { Text, TextSize } from "@/shared/ui/deprecated/Text/Text";
 
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
-import { Loader } from "@/shared/ui/Loader/Loader";
+import { Loader } from "@/shared/ui/deprecated/Loader/Loader";
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -37,7 +37,7 @@ export const ArticleDetailsComments = memo(
             (text: string) => {
                 dispatch(addCommentForArticle(text));
             },
-            [dispatch]
+            [dispatch],
         );
         return (
             <VStack gap="16" max className={className}>
@@ -54,5 +54,5 @@ export const ArticleDetailsComments = memo(
                 />
             </VStack>
         );
-    }
+    },
 );

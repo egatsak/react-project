@@ -7,9 +7,9 @@ import {
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button } from "@/shared/ui/Button/Button";
-import { Input } from "@/shared/ui/Input/Input";
-import { HStack } from "@/shared/ui/Stack";
+import { Button } from "@/shared/ui/deprecated/Button/Button";
+import { Input } from "@/shared/ui/deprecated/Input/Input";
+import { HStack } from "@/shared/ui/deprecated/Stack";
 import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import {
     addCommentFormActions,
@@ -37,7 +37,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         (value: string) => {
             dispatch(addCommentFormActions.setText(value));
         },
-        [dispatch]
+        [dispatch],
     );
 
     const onSendHandler = useCallback(() => {

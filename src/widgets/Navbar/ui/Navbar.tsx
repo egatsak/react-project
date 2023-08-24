@@ -8,10 +8,10 @@ import { AvatarDropdown } from "@/features/AvatarDropdown";
 import { NotificationButton } from "@/features/NotificationButton";
 import { getRouteArticleCreate } from "@/shared/const/router";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink, AppLinkTheme } from "@/shared/ui/AppLink/AppLink";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
-import { HStack } from "@/shared/ui/Stack";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { AppLink, AppLinkTheme } from "@/shared/ui/deprecated/AppLink/AppLink";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button/Button";
+import { HStack } from "@/shared/ui/deprecated/Stack";
+import { Text, TextTheme } from "@/shared/ui/deprecated/Text/Text";
 
 import styles from "./Navbar.module.scss";
 import { ToggleFeatures } from "@/shared/lib/features";

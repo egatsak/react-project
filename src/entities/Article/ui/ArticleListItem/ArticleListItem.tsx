@@ -1,15 +1,15 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { Text } from "@/shared/ui/Text/Text";
-import { Icon } from "@/shared/ui/Icon/Icon";
+import { Text } from "@/shared/ui/deprecated/Text/Text";
+import { Icon } from "@/shared/ui/deprecated/Icon/Icon";
 import EyeIcon from "@/shared/assets/icons/icon-article-eye.svg";
-import { Card } from "@/shared/ui/Card/Card";
+import { Card } from "@/shared/ui/deprecated/Card/Card";
 import { useHover } from "@/shared/lib/hooks/useHover/useHover";
-import { Avatar } from "@/shared/ui/Avatar/Avatar";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Avatar } from "@/shared/ui/deprecated/Avatar/Avatar";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button/Button";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { AppLink } from "@/shared/ui/AppLink/AppLink";
+import { AppLink } from "@/shared/ui/deprecated/AppLink/AppLink";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import { Article, ArticleTextBlock } from "../../model/types/article";
 import {
@@ -19,8 +19,8 @@ import {
 
 import styles from "./ArticleListItem.module.scss";
 import { getRouteArticleDetails } from "@/shared/const/router";
-import { AppImage } from "@/shared/ui/AppImage/AppImage";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { AppImage } from "@/shared/ui/deprecated/AppImage/AppImage";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton/Skeleton";
 
 interface ArticleListItemProps {
     className?: string;
@@ -47,7 +47,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     if (view === ArticleView.LIST) {
         const textBlock = article.blocks.find(
-            (block) => block.type === ArticleBlockType.TEXT
+            (block) => block.type === ArticleBlockType.TEXT,
         ) as ArticleTextBlock;
 
         return (

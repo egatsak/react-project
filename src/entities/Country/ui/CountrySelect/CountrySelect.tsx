@@ -1,7 +1,7 @@
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 
-import { ListBox } from "@/shared/ui/Popups/ui/ListBox/ListBox";
+import { ListBox } from "@/shared/ui/deprecated/Popups/ui/ListBox/ListBox";
 import { Country } from "../../model/consts/countryConsts";
 
 interface CountrySelectProps {
@@ -27,7 +27,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
         (value: string) => {
             onChange?.(value as Country);
         },
-        [onChange]
+        [onChange],
     );
 
     return (

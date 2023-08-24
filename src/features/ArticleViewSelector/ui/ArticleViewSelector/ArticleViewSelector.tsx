@@ -4,8 +4,8 @@ import { ArticleView } from "@/entities/Article";
 import ListIcon from "@/shared/assets/icons/icon-article-list.svg";
 import GridIcon from "@/shared/assets/icons/icon-article-grid.svg";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Icon } from "@/shared/ui/Icon/Icon";
-import { Button, ButtonTheme } from "@/shared/ui/Button/Button";
+import { Icon } from "@/shared/ui/deprecated/Icon/Icon";
+import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button/Button";
 
 import styles from "./ArticleViewSelector.module.scss";
 
