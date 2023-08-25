@@ -7,7 +7,7 @@ import { Loader } from "@/shared/ui/deprecated/Loader/Loader";
 import { Avatar } from "@/shared/ui/deprecated/Avatar/Avatar";
 import { classNames, Mods } from "@/shared/lib/classNames/classNames";
 import { Country, CountrySelect } from "@/entities/Country";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { Profile } from "../../model/types/profile";
 
 import styles from "./ProfileCard.module.scss";

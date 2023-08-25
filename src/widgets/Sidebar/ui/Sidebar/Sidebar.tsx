@@ -8,7 +8,7 @@ import {
     ButtonTheme,
 } from "@/shared/ui/deprecated/Button/Button";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { VStack } from "@/shared/ui/deprecated/Stack/VStack/VStack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { getSidebarItems } from "../../model/selectors/getSidebarItems";
 import { SidebarItem } from "../SidebarItem/SidebarItem";
 

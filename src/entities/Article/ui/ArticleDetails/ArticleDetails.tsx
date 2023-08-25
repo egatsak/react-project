@@ -14,7 +14,7 @@ import EyeIcon from "@/shared/assets/icons/icon-article-eye.svg";
 import CalendarIcon from "@/shared/assets/icons/icon-article-calendar.svg";
 
 import { Icon } from "@/shared/ui/deprecated/Icon/Icon";
-import { HStack, VStack } from "@/shared/ui/deprecated/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { ArticleBlock } from "../../model/types/article";
 import { articleDetailsReducer } from "../../model/slice/articleDetailsSlice";
 import {

@@ -19,7 +19,7 @@ import {
 
 import styles from "./ArticleListItem.module.scss";
 import { getRouteArticleDetails } from "@/shared/const/router";
-import { AppImage } from "@/shared/ui/deprecated/AppImage/AppImage";
+import { AppImage } from "@/shared/ui/redesigned/AppImage/AppImage";
 import { Skeleton } from "@/shared/ui/deprecated/Skeleton/Skeleton";
 
 interface ArticleListItemProps {

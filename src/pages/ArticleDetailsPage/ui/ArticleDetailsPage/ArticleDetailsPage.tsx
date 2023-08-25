@@ -13,7 +13,7 @@ import {
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { Card } from "@/shared/ui/deprecated/Card/Card";
-import { VStack } from "@/shared/ui/deprecated/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 
 import { articleDetailsPageReducer } from "../../model/slice";
 import { ArticleDetailsComments } from "../ArticleDetailsComments/ArticleDetailsComments";
