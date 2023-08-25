@@ -44,7 +44,7 @@ server.post("/login", (req, res) => {
 
         return res.status(403).json({ message: "User not found" });
     } catch (e) {
-        console.log(e);
+        console.trace(e);
         return res.status(500).json({ message: e.message });
     }
 });
@@ -65,7 +65,7 @@ server.use(router);
     jsonServer.rewriter({
         "/comments/:id":
             "/comments?articleId=:id&_expand=user&_sort=id&_order=asc",
-    })
+    }),
 ); */
 
 const httpsServer = https.createServer(options, server);
@@ -75,9 +75,9 @@ const HTTPS_PORT = 8443;
 const HTTP_PORT = 8000;
 
 httpsServer.listen(HTTPS_PORT, () => {
-    console.log(`https server is running on port ${8443}`);
+    console.log(`https server is running on port ${HTTPS_PORT}`);
 });
 
 httpServer.listen(HTTP_PORT, () => {
-    console.log(`http server is running on port ${8443}`);
+    console.log(`http server is running on port ${HTTP_PORT}`);
 });
