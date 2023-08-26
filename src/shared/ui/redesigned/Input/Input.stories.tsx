@@ -18,13 +18,11 @@ export const Primary = Template.bind({});
 Primary.args = {
     placeholder: "TypeText",
     value: "123 321",
-    inputId: "stories-input",
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
     placeholder: "TypeText",
     value: "123 321",
-    inputId: "stories-input",
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

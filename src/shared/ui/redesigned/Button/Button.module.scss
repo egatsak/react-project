@@ -1,10 +1,27 @@
 .button {
+    display: flex;
+    align-items: center;
     padding: 6px 15px;
     color: var(--text-redesigned);
     cursor: pointer;
 
+    .addonLeft,
+    .addonRight {
+        display: flex;
+    }
+
+    .addonLeft svg,
+    .addonRight svg {
+        color: var(--hint-redesigned);
+    }
+
     &:hover {
         color: var(--accent-redesigned);
+
+        .addonLeft svg,
+        .addonRight svg {
+            color: var(--accent-redesigned);
+        }
     }
 
     &[disabled] {
@@ -65,4 +82,8 @@
 
 .fullWidth {
     width: 100%;
+}
+
+.withAddon {
+    padding: 0 16px;
 }

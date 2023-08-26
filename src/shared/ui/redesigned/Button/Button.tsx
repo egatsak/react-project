@@ -13,6 +13,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize;
     children?: ReactNode;
     fullWidth?: boolean;
+    addonLeft?: ReactNode;
+    addonRight?: ReactNode;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -23,12 +25,15 @@ export const Button = memo((props: ButtonProps) => {
         size = "m",
         square,
         fullWidth,
+        addonLeft,
+        addonRight,
         ...otherProps
     } = props;
 
     const mods: Mods = {
         [styles.square]: square,
         [styles.fullWidth]: fullWidth,
+        [styles.withAddon]: Boolean(addonLeft || addonRight),
     };
 
     return (
@@ -41,7 +46,11 @@ export const Button = memo((props: ButtonProps) => {
             ])}
             {...otherProps}
         >
+            {addonLeft && <div className={styles.addonLeft}>{addonLeft}</div>}
             {children}
+            {addonRight && (
+                <div className={styles.addonRight}>{addonRight}</div>
+            )}
         </button>
     );
 });

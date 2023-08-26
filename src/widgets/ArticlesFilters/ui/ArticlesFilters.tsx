@@ -2,13 +2,16 @@ import { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { ArticleSortField, ArticleType } from "@/entities/Article";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { Card } from "@/shared/ui/redesigned/Card/Card";
 import { ArticleSortSelector } from "@/features/ArticleSortSelector";
 import { ArticleTypeTabs } from "@/features/ArticleTypeTabs";
-import { SortOrder } from "@/shared/types/sort";
-import styles from "./ArticlesFilters.module.scss";
+import { Card } from "@/shared/ui/redesigned/Card/Card";
 import { Input } from "@/shared/ui/redesigned/Input/Input";
+import { SortOrder } from "@/shared/types/sort";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import SearchIcon from "@/shared/assets/icons/icon-search-redesigned.svg";
+
+import styles from "./ArticlesFilters.module.scss";
+import { Icon } from "@/shared/ui/redesigned/Icon/Icon";
 
 interface ArticlesFiltersProps {
     className?: string;
@@ -38,14 +41,14 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
 
     return (
         <Card
-            padding="24"
+            padding="8"
             className={classNames(styles.articlesFilters, {}, [className])}
         >
             <Input
-                inputId="search"
                 onChange={onChangeSearch}
                 value={search}
                 placeholder={t("Search", { ns: "translation" })}
+                addonLeft={<Icon Svg={SearchIcon} />}
             />
             <ArticleTypeTabs
                 value={type}

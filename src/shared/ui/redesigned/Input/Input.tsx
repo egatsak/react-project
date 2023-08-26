@@ -1,10 +1,10 @@
-import React, { InputHTMLAttributes, memo, useEffect, useRef } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 
-import { classNames } from "@/shared/lib/classNames/classNames";
+import { Mods, classNames } from "@/shared/lib/classNames/classNames";
 import styles from "./Input.module.scss";
 
 type HTMLInputProps = Omit<
-    InputHTMLAttributes<HTMLInputElement>,
+    React.InputHTMLAttributes<HTMLInputElement>,
     "value" | "onChange" | "readOnly"
 >;
 
@@ -13,8 +13,9 @@ interface InputProps extends HTMLInputProps {
     value?: string | number;
     onChange?: (value: string) => void;
     autofocus?: boolean;
-    inputId?: string;
     readonly?: boolean;
+    addonLeft?: React.ReactNode;
+    addonRight?: React.ReactNode;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -23,14 +24,16 @@ export const Input = memo((props: InputProps) => {
         value,
         onChange,
         type = "text",
-        placeholder,
         autofocus,
-        inputId,
         readonly,
+        addonLeft,
+        addonRight,
         ...otherProps
     } = props;
 
     const ref = useRef<HTMLInputElement>(null);
+
+    const [isFocused, setIsFocused] = useState(false);
 
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
@@ -38,30 +41,43 @@ export const Input = memo((props: InputProps) => {
 
     useEffect(() => {
         if (autofocus) {
+            setIsFocused(true);
             ref.current?.focus();
         }
     }, [autofocus]);
 
+    const mods: Mods = {
+        [styles.readonly]: readonly,
+        [styles.focused]: isFocused,
+        [styles.withAddonLeft]: Boolean(addonLeft),
+        [styles.withAddonRight]: Boolean(addonRight),
+    };
+
+    const onBlur = () => {
+        setIsFocused(false);
+    };
+
+    const onFocus = () => {
+        setIsFocused(true);
+    };
+
     return (
-        <div className={classNames(styles.inputWrapper, {}, [className])}>
-            {placeholder && inputId && (
-                <label
-                    htmlFor={inputId}
-                    className={styles.placeholder}
-                >{`${placeholder}>`}</label>
-            )}
+        <div className={classNames(styles.inputWrapper, mods, [className])}>
+            {addonLeft && <div className={styles.addonLeft}>{addonLeft}</div>}
             <input
-                id={inputId}
                 ref={ref}
                 type={type}
                 value={value}
                 onChange={changeHandler}
-                className={classNames(styles.input, {
-                    [styles.readonly]: readonly,
-                })}
+                onFocus={onFocus}
+                onBlur={onBlur}
+                className={classNames(styles.input)}
                 readOnly={readonly}
                 {...otherProps}
             />
+            {addonRight && (
+                <div className={styles.addonRight}>{addonRight}</div>
+            )}
         </div>
     );
 });
