@@ -13,11 +13,21 @@
     }
 }
 
-.clear {
+.clear,
+.filled {
     outline: none;
     border: none;
+}
+
+.clear {
     padding: 0;
     background: none;
+}
+
+.filled {
+    border-radius: 34px;
+    padding: 8px 16px;
+    background: var(--light-bg-redesigned);
 }
 
 .square {

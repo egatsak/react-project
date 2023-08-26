@@ -6,11 +6,14 @@ export type CardVariant = "normal" | "outlined" | "light";
 
 export type CardPadding = "0" | "8" | "16" | "24";
 
+export type CardBorder = "round" | "rect";
+
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
     variant?: CardVariant;
     children: React.ReactNode;
     max?: boolean;
+    border?: CardBorder;
     padding?: CardPadding;
 }
 
@@ -28,6 +31,7 @@ export const Card = (props: CardProps) => {
         variant = "normal",
         max,
         padding = "8",
+        border = "rect",
         ...otherProps
     } = props;
 
@@ -40,7 +44,12 @@ export const Card = (props: CardProps) => {
                 {
                     [styles.fullWidth]: max,
                 },
-                [className, styles[variant], styles[paddingClass]],
+                [
+                    className,
+                    styles[variant],
+                    styles[paddingClass],
+                    styles[border],
+                ],
             )}
             {...otherProps}
         >

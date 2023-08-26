@@ -1,0 +1,12 @@
+.tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.tab {
+    cursor: pointer;
+}
+
+.tabSelected {
+    padding: 8px 16px;
+}

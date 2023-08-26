@@ -45,3 +45,16 @@
     background: none;
     cursor: pointer;
 }
+
+.selected {
+    position: relative;
+    background: var(--light-bg-redesigned);
+
+    &::before {
+        content: "✔";
+        position: absolute;
+        right: 3%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
