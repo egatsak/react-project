@@ -6,7 +6,7 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { Select, SelectOption } from "@/shared/ui/deprecated/Select/Select";
 import { ListBox } from "@/shared/ui/redesigned/Popups";
-import { VStack } from "@/shared/ui/redesigned/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text/Text";
 import { SortOrder } from "@/shared/types/sort";
 
@@ -76,7 +76,8 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                 </VStack>
             }
             off={
-                <div
+                <HStack
+                    gap="4"
                     className={classNames(styles.articleSortSelector, {}, [
                         className,
                     ])}
@@ -94,7 +95,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                         label={t("by", { ns: "translation" })}
                         onChange={onChangeOrder}
                     />
-                </div>
+                </HStack>
             }
         />
     );

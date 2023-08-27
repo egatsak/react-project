@@ -7,7 +7,7 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "theme": "app_dark_theme",
@@ -749,26 +749,30 @@
       ]
     },
     {
-        "title": "JS12 News",
-        "subtitle": "News in JS 2023",
-        "img": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
-        "views": 1,
-        "userId": "1",
-        "createdAt": "26.02.2022",
-        "type": ["IT"],
-        "blocks": [],
-        "id": "A9fLlYD"
+      "title": "JS12 News",
+      "subtitle": "News in JS 2023",
+      "img": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
+      "views": 1,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "A9fLlYD"
     },
     {
-        "title": "JS12 News",
-        "subtitle": "News in JS 2023",
-        "img": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
-        "views": 1,
-        "userId": "1",
-        "createdAt": "26.02.2022",
-        "type": ["IT"],
-        "blocks": [],
-        "id": "gpFSowj"
+      "title": "JS12 News",
+      "subtitle": "News in JS 2023",
+      "img": "https://www.freepnglogos.com/uploads/javascript-png/javascript-vector-logo-yellow-png-transparent-javascript-vector-12.png",
+      "views": 1,
+      "userId": "1",
+      "createdAt": "26.02.2022",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "gpFSowj"
     },
     {
       "title": "test article",
