@@ -11,6 +11,9 @@ import ArrowIcon from "@/shared/assets/icons/icon-arrow-bottom-redesigned.svg";
 import styles from "./ListBox.module.scss";
 import popupStyles from "../../styles/popup.module.scss";
 import { Icon } from "../../../Icon/Icon";
+import { Text } from "../../../Text/Text";
+
+export type ListboxSize = "s" | "m" | "l";
 
 export interface ListBoxItem<T extends string> {
     value: T;
@@ -26,6 +29,7 @@ interface ListBoxProps<T extends string> {
     onChange: (value: T) => void;
     readonly?: boolean;
     label?: string;
+    size?: ListboxSize;
     direction?: DropdownDirection;
 }
 
@@ -37,6 +41,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         defaultValue,
         onChange,
         readonly,
+        size = "m",
         direction = "bottom-right",
         label,
     } = props;
@@ -51,8 +56,8 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
     }, [items, value]);
 
     return (
-        <HStack gap="4">
-            {label && <span>{`${label}>`}</span>}
+        <HStack gap="8">
+            {label && <Text text={label} />}
             <HListBox
                 as="div"
                 className={classNames(styles.listBox, {}, [
@@ -63,7 +68,12 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 onChange={onChange}
                 disabled={readonly}
             >
-                <HListBox.Button className={styles.trigger} as="div">
+                <HListBox.Button
+                    className={classNames(styles.trigger, {}, [
+                        popupStyles[size],
+                    ])}
+                    as="div"
+                >
                     <Button
                         variant="filled"
                         disabled={readonly}
