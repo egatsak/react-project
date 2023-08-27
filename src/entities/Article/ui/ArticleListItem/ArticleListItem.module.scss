@@ -101,3 +101,14 @@
         }
     }
 }
+
+.articleListItemRedesigned {
+    &.LIST {
+        width: 100%;
+    }
+
+    &.GRID {
+        width: 240px;
+        height: 350px;
+    }
+}
