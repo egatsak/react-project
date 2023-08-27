@@ -14,6 +14,7 @@ interface TextProps {
     title?: string;
     text?: string;
     variant?: TextVariant;
+    bold?: boolean;
     align?: TextAlign;
     size?: TextSize;
     "data-testid"?: string;
@@ -41,6 +42,7 @@ export const Text = memo((props: TextProps) => {
         variant = "primary",
         align = "left",
         size = "m",
+        bold = false,
         "data-testid": dataTestId = "Text",
     } = props;
 
@@ -49,7 +51,7 @@ export const Text = memo((props: TextProps) => {
 
     return (
         <div
-            className={classNames(styles.textWrapper, {}, [
+            className={classNames(styles.textWrapper, { [styles.bold]: bold }, [
                 className,
                 sizeClass,
                 styles[variant],
