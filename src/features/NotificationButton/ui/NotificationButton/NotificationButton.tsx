@@ -9,7 +9,7 @@ import {
     Button as ButtonDeprecated,
     ButtonTheme,
 } from "@/shared/ui/deprecated/Button/Button";
-import { Drawer } from "@/shared/ui/deprecated/Drawer/Drawer";
+import { Drawer } from "@/shared/ui/redesigned/Drawer/Drawer";
 import { Icon as IconDeprecated } from "@/shared/ui/deprecated/Icon/Icon";
 import { Popover as PopoverDeprecated } from "@/shared/ui/deprecated/Popups";
 import { classNames } from "@/shared/lib/classNames/classNames";

@@ -10,8 +10,8 @@ import {
     ButtonSize,
     ButtonTheme,
 } from "@/shared/ui/deprecated/Button/Button";
-import { Drawer } from "@/shared/ui/deprecated/Drawer/Drawer";
-import { Modal } from "@/shared/ui/deprecated/Modal/Modal";
+import { Drawer } from "@/shared/ui/redesigned/Drawer/Drawer";
+import { Modal } from "@/shared/ui/redesigned/Modal/Modal";
 import { Input } from "@/shared/ui/deprecated/Input/Input";
 
 interface RatingCardProps {

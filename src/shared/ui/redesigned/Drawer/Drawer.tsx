@@ -8,6 +8,7 @@ import {
 import { Overlay } from "../../redesigned/Overlay/Overlay";
 import styles from "./Drawer.module.scss";
 import { Portal } from "../../redesigned/Portal/Portal";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface DrawerProps {
     className?: string;
@@ -79,12 +80,17 @@ export const DrawerContent = memo((props: DrawerProps) => {
     const display = y.to((py) => (py < height ? "block" : "none"));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById("app") ?? document.body}>
             <div
                 className={classNames(styles.Drawer, {}, [
                     className,
                     theme,
                     "app_drawer",
+                    toggleFeatures({
+                        name: "isAppRedesigned",
+                        on: () => styles.drawerRedesigned,
+                        off: () => styles.drawerOld,
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />
@@ -114,10 +120,6 @@ const DrawerAsync = (props: DrawerProps) => {
     return <DrawerContent {...props} />;
 };
 
-/**
- * @deprecated
- * Please use redesigned UI components instead
- */
 export const Drawer = (props: DrawerProps) => {
     return (
         <AnimationProvider>
