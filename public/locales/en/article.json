@@ -20,5 +20,9 @@
     "Read more": "Read more",
     "Recommendations": "Recommendations",
     "Science": "Science",
-    "Welcome to articles page!": "Welcome to articles page!"
+    "Welcome to articles page!": "Welcome to articles page!",
+    "{{count}} views_zero": "{{count}} views",
+    "{{count}} views_one": "{{count}} view",
+    "{{count}} views_few": "{{count}} views",
+    "{{count}} views_many": "{{count}} views"
 }

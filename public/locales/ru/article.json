@@ -20,5 +20,9 @@
     "Read more": "Читать",
     "Recommendations": "Рекомендации",
     "Science": "Наука",
-    "Welcome to articles page!": "Добро пожаловать на страницу статей!"
+    "Welcome to articles page!": "Добро пожаловать на страницу статей!",
+    "{{count}} views_zero": "{{count}} просмотров",
+    "{{count}} views_one": "{{count}} просмотр",
+    "{{count}} views_few": "{{count}} просмотра",
+    "{{count}} views_many": "{{count}} просмотров"
 }
