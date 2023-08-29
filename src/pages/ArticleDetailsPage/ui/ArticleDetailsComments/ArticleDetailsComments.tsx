@@ -7,13 +7,18 @@ import { AddCommentForm } from "@/features/AddCommentForm";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { VStack } from "@/shared/ui/redesigned/Stack";
-import { Text, TextSize } from "@/shared/ui/deprecated/Text/Text";
+import {
+    Text as TextDeprecated,
+    TextSize,
+} from "@/shared/ui/deprecated/Text/Text";
 
 import { getArticleCommentsIsLoading } from "../../model/selectors/comments";
 import { addCommentForArticle } from "../../model/services/addCommentForArticle/addCommentForArticle";
 import { fetchCommentsByArticleId } from "../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId";
 import { getArticleComments } from "../../model/slice/articleDetailsCommentsSlice";
 import { Loader } from "@/shared/ui/deprecated/Loader/Loader";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Text } from "@/shared/ui/redesigned/Text/Text";
 
 interface ArticleDetailsCommentsProps {
     className?: string;
@@ -41,9 +46,20 @@ export const ArticleDetailsComments = memo(
         );
         return (
             <VStack gap="16" max className={className}>
-                <Text
-                    size={TextSize.L}
-                    title={t("Comments", { ns: "article" })}
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={
+                        <Text
+                            size="l"
+                            title={t("Recommendations", { ns: "article" })}
+                        />
+                    }
+                    off={
+                        <TextDeprecated
+                            size={TextSize.L}
+                            title={t("Comments", { ns: "article" })}
+                        />
+                    }
                 />
                 <Suspense fallback={<Loader />}>
                     <AddCommentForm onSendComment={onSendComment} />

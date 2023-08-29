@@ -7,8 +7,8 @@ import {
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button } from "@/shared/ui/deprecated/Button/Button";
-import { Input } from "@/shared/ui/deprecated/Input/Input";
+import { Button as ButtonDeprecated } from "@/shared/ui/deprecated/Button/Button";
+import { Input as InputDeprecated } from "@/shared/ui/deprecated/Input/Input";
 import { HStack } from "@/shared/ui/redesigned/Stack";
 import { getAddCommentFormText } from "../../model/selectors/addCommentFormSelectors";
 import {
@@ -17,6 +17,10 @@ import {
 } from "../../model/slice/addCommentFormSlice";
 
 import styles from "./AddCommentForm.module.scss";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Input } from "@/shared/ui/redesigned/Input/Input";
+import { Button } from "@/shared/ui/redesigned/Button/Button";
+import { Card } from "@/shared/ui/redesigned/Card/Card";
 
 export interface AddCommentFormProps {
     className?: string;
@@ -47,27 +51,68 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <HStack
-                data-testid="AddCommentForm"
-                justify="between"
-                max
-                className={classNames(styles.addCommentForm, {}, [className])}
-            >
-                <Input
-                    data-testid="AddCommentForm.Input"
-                    placeholder={t("Enter comment", { ns: "translation" })}
-                    inputId="add-comment-input"
-                    value={text || ""}
-                    onChange={onCommentTextChange}
-                    className={styles.input}
-                />
-                <Button
-                    data-testid="AddCommentForm.Button"
-                    onClick={onSendHandler}
-                >
-                    {t("Submit", { ns: "translation" })}
-                </Button>
-            </HStack>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <Card padding="24" border="round" max>
+                        <HStack
+                            data-testid="AddCommentForm"
+                            justify="between"
+                            max
+                            gap="16"
+                            className={classNames(
+                                styles.addCommentFormRedesigned,
+                                {},
+                                [className],
+                            )}
+                        >
+                            <Input
+                                data-testid="AddCommentForm.Input"
+                                placeholder={t("Enter comment", {
+                                    ns: "translation",
+                                })}
+                                value={text || ""}
+                                onChange={onCommentTextChange}
+                                className={styles.input}
+                            />
+                            <Button
+                                data-testid="AddCommentForm.Button"
+                                onClick={onSendHandler}
+                                variant="outline"
+                            >
+                                {t("Submit", { ns: "translation" })}
+                            </Button>
+                        </HStack>
+                    </Card>
+                }
+                off={
+                    <HStack
+                        data-testid="AddCommentForm"
+                        justify="between"
+                        max
+                        className={classNames(styles.addCommentForm, {}, [
+                            className,
+                        ])}
+                    >
+                        <InputDeprecated
+                            data-testid="AddCommentForm.Input"
+                            placeholder={t("Enter comment", {
+                                ns: "translation",
+                            })}
+                            inputId="add-comment-input"
+                            value={text || ""}
+                            onChange={onCommentTextChange}
+                            className={styles.input}
+                        />
+                        <ButtonDeprecated
+                            data-testid="AddCommentForm.Button"
+                            onClick={onSendHandler}
+                        >
+                            {t("Submit", { ns: "translation" })}
+                        </ButtonDeprecated>
+                    </HStack>
+                }
+            />
         </DynamicModuleLoader>
     );
 });

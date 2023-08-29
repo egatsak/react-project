@@ -58,5 +58,11 @@
             ""
         ],
         "description": "Create redux toolkit slice"
+    },
+
+    "Create ToggleFeatures component": {
+        "prefix": "tggl",
+        "body": ["<ToggleFeatures feature='isAppRedesigned' on={} off={} />"],
+        "description": "Create ToggleFeatures component"
     }
 }

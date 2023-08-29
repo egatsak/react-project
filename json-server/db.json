@@ -7,7 +7,7 @@
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "theme": "app_light_theme",
@@ -862,6 +862,19 @@
       "rate": 4,
       "feedback": "WOW!!!!!!",
       "id": "R2TW65f"
+    },
+    {
+      "userId": "1",
+      "articleId": "11",
+      "rate": 4,
+      "feedback": "Nice article!",
+      "id": "AFjD9KS"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 4,
+      "id": "dt3zgPs"
     }
   ],
   "profile-ratings": [

@@ -13,6 +13,7 @@ import {
     TextSize,
 } from "@/shared/ui/deprecated/Text/Text";
 import { Skeleton as SkeletonDeprecated } from "@/shared/ui/deprecated/Skeleton/Skeleton";
+
 import { Avatar as AvatarDeprecated } from "@/shared/ui/deprecated/Avatar/Avatar";
 import EyeIcon from "@/shared/assets/icons/icon-article-eye.svg";
 import CalendarIcon from "@/shared/assets/icons/icon-article-calendar.svg";
@@ -29,10 +30,10 @@ import { fetchArticleById } from "../../model/services/fetchArticleById/fetchArt
 
 import styles from "./ArticleDetails.module.scss";
 import { renderArticleBlock } from "./renderArticleBlock";
-import { ToggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
 import { Text } from "@/shared/ui/redesigned/Text/Text";
 import { AppImage } from "@/shared/ui/redesigned/AppImage/AppImage";
-import { Skeleton } from "@/shared/ui/redesigned/Skeleton/Skeleton";
+import { Skeleton as SkeletonRedesigned } from "@/shared/ui/redesigned/Skeleton/Skeleton";
 
 interface ArticleDetailsProps {
     id?: string;
@@ -69,7 +70,6 @@ const Deprecated = () => {
                     <TextDeprecated text={article?.createdAt} />
                 </HStack>
             </VStack>
-
             {article?.blocks.map(renderArticleBlock)}
         </>
     );
@@ -84,12 +84,39 @@ const Redesigned = () => {
             <Text title={article?.subtitle} size="m" />
             <AppImage
                 className={styles.img}
-                fallback={<Skeleton width="100%" height={420} border="16px" />}
+                fallback={
+                    <SkeletonRedesigned
+                        width="100%"
+                        height={420}
+                        border="16px"
+                    />
+                }
                 src={article?.img}
             />
-
             {article?.blocks.map(renderArticleBlock)}
         </>
+    );
+};
+
+export const ArticleDetailsSkeleton = () => {
+    const Skeleton = toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => SkeletonRedesigned,
+        off: () => SkeletonDeprecated,
+    });
+    return (
+        <VStack gap="16" max>
+            <Skeleton
+                className={styles.avatar}
+                width={200}
+                height={200}
+                border="50%"
+            />
+            <Skeleton className={styles.title} width={300} height={32} />
+            <Skeleton className={styles.skeleton} width="100%" height={24} />
+            <Skeleton className={styles.skeleton} width="100%" height={200} />
+            <Skeleton className={styles.skeleton} width="100%" height={200} />
+        </VStack>
     );
 };
 
@@ -109,48 +136,30 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     let content;
 
     if (isLoading) {
-        content = (
-            <>
-                <SkeletonDeprecated
-                    className={styles.avatar}
-                    width={200}
-                    height={200}
-                    border="50%"
-                />
-                <SkeletonDeprecated
-                    className={styles.title}
-                    width={300}
-                    height={32}
-                />
-                <SkeletonDeprecated
-                    className={styles.skeleton}
-                    width="100%"
-                    height={24}
-                />
-                <SkeletonDeprecated
-                    className={styles.skeleton}
-                    width="100%"
-                    height={200}
-                />
-                <SkeletonDeprecated
-                    className={styles.skeleton}
-                    width="100%"
-                    height={200}
-                />
-            </>
-        );
+        content = <ArticleDetailsSkeleton />;
     } else if (error) {
         content = (
-            <Text
-                align={TextAlign.CENTER}
-                title={t("Article loading error", { ns: "article" })}
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <Text
+                        align="center"
+                        title={t("Article loading error", { ns: "article" })}
+                    />
+                }
+                off={
+                    <TextDeprecated
+                        align={TextAlign.CENTER}
+                        title={t("Article loading error", { ns: "article" })}
+                    />
+                }
             />
         );
     } else {
         content = (
             <ToggleFeatures
                 feature="isAppRedesigned"
-                on={<Redesigned />}
+                on={<Redesigned key="block-" />}
                 off={<Deprecated />}
             />
         );
