@@ -42,6 +42,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
     return (
         <Card
             padding="8"
+            border="partial"
             className={classNames(styles.articlesFilters, {}, [className])}
         >
             <Input

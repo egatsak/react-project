@@ -26,6 +26,7 @@ export const Tabs = memo((props: TabsProps) => {
         onTabClick,
         direction = "row",
         align = "center",
+        ...otherProps
     } = props;
 
     const clickHandler = useCallback(
@@ -43,6 +44,7 @@ export const Tabs = memo((props: TabsProps) => {
             gap="8"
             align={align}
             className={classNames(styles.tabs, {}, [className])}
+            {...otherProps}
         >
             {tabs.map((tab) => {
                 const isSelected = tab.value === value;
