@@ -50,19 +50,4 @@
 
     // xl
     --font-xl-redesigned: var(--font-size-xl) / var(--font-line-xl) var(--font-family-header-redesigned);
-
-    ::-webkit-scrollbar {
-        width: 12px;
-        height: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-        background: var(--card-bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-        border: 2px solid var(--primary-color);
-        border-radius: 20px;
-        background-color: var(--inverted-primary-color);
-    }
 }
