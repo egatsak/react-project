@@ -2,13 +2,21 @@
     display: flex;
     flex-direction: column;
     width: 300px;
+
+    .input {
+        margin-top: 10px;
+    }
+
+    .loginBtn {
+        margin-top: 15px;
+        margin-left: auto;
+    }
 }
 
-.input {
-    margin-top: 10px;
-}
+.loginFormRedesigned {
+    width: 300px;
 
-.loginBtn {
-    margin-top: 15px;
-    margin-left: auto;
+    .loginBtn {
+        margin-left: auto;
+    }
 }

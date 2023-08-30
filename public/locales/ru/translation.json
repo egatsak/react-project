@@ -37,5 +37,6 @@
     "desc": "убыванию",
     "text lorem ipsum lorem ipsum": "текст lorem ipsum lorem ipsum",
     "throw error": "выбросить ошибку",
-    "Your review": "Ваш отзыв"
+    "Your review": "Ваш отзыв",
+    "Error fetching users!": "Ошибка при получении пользователей!"
 }

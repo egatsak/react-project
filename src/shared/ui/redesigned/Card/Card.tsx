@@ -6,7 +6,7 @@ export type CardVariant = "normal" | "outlined" | "light";
 
 export type CardPadding = "0" | "8" | "16" | "24";
 
-export type CardBorder = "round" | "rect";
+export type CardBorder = "round" | "normalBorder" | "partial";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;
@@ -33,7 +33,7 @@ export const Card = (props: CardProps) => {
         max,
         fullHeight,
         padding = "8",
-        border = "rect",
+        border = "normal",
         ...otherProps
     } = props;
 

@@ -82,6 +82,7 @@ export const ProfileCardRedesigned: FC<ProfileCardProps> = (props) => {
     return (
         <Card
             padding="24"
+            border="partial"
             max
             className={classNames(styles.profileCardRedesigned, {}, [
                 className,

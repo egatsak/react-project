@@ -42,10 +42,14 @@
     padding: 24px;
 }
 
-.rect {
+.normalBorder {
     border-radius: 12px;
 }
 
 .round {
     border-radius: 40px;
+}
+
+.partial {
+    border-radius: 20px;
 }
