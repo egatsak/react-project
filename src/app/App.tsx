@@ -12,6 +12,7 @@ import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
 
 import { classNames } from "../shared/lib/classNames/classNames";
+import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout/AppLoaderLayout";
 
 const App = () => {
     const { theme } = useTheme();
@@ -25,7 +26,17 @@ const App = () => {
     }, [dispatch, inited]);
 
     if (!inited) {
-        return <PageLoader />;
+        return (
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <div id="app" className={classNames("app", {}, [theme])}>
+                        <AppLoaderLayout />
+                    </div>
+                }
+                off={<PageLoader />}
+            />
+        );
     }
 
     return (
