@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from "react";
+import { Suspense, memo, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 import { AppRouter } from "./providers/router";
@@ -10,12 +10,13 @@ import { MainLayout } from "@/shared/layouts";
 import { ToggleFeatures } from "@/shared/lib/features";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-
-import { classNames } from "../shared/lib/classNames/classNames";
 import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout/AppLoaderLayout";
-import { useAppToolbar } from "./lib/useAppToolbar";
 
-const App = () => {
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { useAppToolbar } from "./lib/useAppToolbar";
+import { withTheme } from "./providers/ThemeProvider/ui/withTheme";
+
+const App = memo(() => {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
@@ -72,6 +73,6 @@ const App = () => {
             }
         />
     );
-};
+});
 
-export default App;
+export default withTheme(App);
