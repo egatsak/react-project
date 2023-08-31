@@ -24,7 +24,7 @@
       "username": "user",
       "password": "123",
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "hasArticlesPageBeenVisited": true
       },

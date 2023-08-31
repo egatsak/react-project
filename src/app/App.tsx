@@ -13,11 +13,13 @@ import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch
 
 import { classNames } from "../shared/lib/classNames/classNames";
 import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout/AppLoaderLayout";
+import { useAppToolbar } from "./lib/useAppToolbar";
 
 const App = () => {
     const { theme } = useTheme();
     const dispatch = useAppDispatch();
     const inited = useSelector(getUserInited);
+    const toolbar = useAppToolbar();
 
     useEffect(() => {
         if (!inited) {
@@ -52,6 +54,7 @@ const App = () => {
                             header={<Navbar />}
                             content={<AppRouter />}
                             sidebar={<Sidebar />}
+                            toolbar={toolbar}
                         />
                     </Suspense>
                 </div>

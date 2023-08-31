@@ -72,7 +72,7 @@ export const Flex = (props: FlexProps) => {
         direction = "row",
         gap,
         max,
-        wrap = "nowrap",
+        wrap,
         ...otherProps
     } = props;
 
@@ -82,7 +82,7 @@ export const Flex = (props: FlexProps) => {
         alignClasses[align],
         directionClasses[direction],
         gap && gapClasses[gap],
-        styles[wrap],
+        wrap && styles[wrap],
     ];
 
     const mods: Mods = {
