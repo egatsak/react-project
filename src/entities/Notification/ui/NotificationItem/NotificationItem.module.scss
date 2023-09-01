@@ -1,4 +1,9 @@
+.link,
 .notificationItem,
-.link {
+.notificationItemRedesigned {
     width: 100%;
+}
+
+.notificationItemRedesigned {
+    background: var(--light-bg-redesigned);
 }

@@ -1,3 +1,9 @@
 .notificationList {
     width: 100%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.notificationList::-webkit-scrollbar {
+    display: none;
 }

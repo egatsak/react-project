@@ -15,7 +15,6 @@ const ProfilePage: FC<ProfilePageProps> = (props) => {
     const { className } = props;
     useTranslation("profile");
     const { id } = useParams<{ id: string }>();
-
     return (
         <Page
             data-testid="ProfilePage"

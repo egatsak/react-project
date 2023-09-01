@@ -10,7 +10,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_light_theme",
+        "theme": "app_dark_theme",
         "isFirstVisit": true,
         "hasArticlesPageBeenVisited": true
       },
@@ -31,7 +31,7 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": false,
-        "isAppRedesigned": false
+        "isAppRedesigned": true
       },
       "roles": [
         "USER"
@@ -49,7 +49,8 @@
       },
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isAppRedesigned": false
       },
       "roles": [
         "MANAGER"
@@ -87,21 +88,21 @@
       "title": "Notification 2",
       "description": "Smth Happened 2",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "href": "http://localhost:4000/main"
     },
     {
       "id": "3",
       "title": "Notification 3",
       "description": "Smth Happened 3",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "href": "http://localhost:4000/about"
     },
     {
       "id": "4",
       "title": "Notification 4",
       "description": "Smth Happened 4",
       "userId": "1",
-      "href": "http://localhost:3000/admin"
+      "href": "http://localhost:4000/articles"
     }
   ],
   "posts": [
@@ -170,6 +171,12 @@
       "userId": "1",
       "text": "4321234 well well well!",
       "id": "9v_Do9J"
+    },
+    {
+      "articleId": "7",
+      "userId": "3",
+      "text": "again the same!",
+      "id": "3tILLBv"
     }
   ],
   "articles": [
@@ -876,6 +883,13 @@
       "articleId": "15",
       "rate": 4,
       "id": "dt3zgPs"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 4,
+      "feedback": "nice article!",
+      "id": "zdVfs08"
     }
   ],
   "profile-ratings": [

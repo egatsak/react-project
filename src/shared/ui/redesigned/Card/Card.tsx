@@ -33,7 +33,7 @@ export const Card = (props: CardProps) => {
         max,
         fullHeight,
         padding = "8",
-        border = "normal",
+        border = "normalBorder",
         ...otherProps
     } = props;
 

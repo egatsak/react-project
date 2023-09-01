@@ -89,7 +89,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = (props) => {
                                 feature="isArticleRatingEnabled"
                                 on={<ArticleRating articleId={id} />}
                                 off={
-                                    <Card>
+                                    <Card max className={styles.stubCard}>
                                         {t(
                                             "Article ratings will be introduced soon!",
                                             {

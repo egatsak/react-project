@@ -2,26 +2,27 @@ import { memo } from "react";
 import { useParams } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-import { classNames } from "@/shared/lib/classNames/classNames";
 import { Page } from "@/widgets/Page";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { Text } from "@/shared/ui/redesigned/Text/Text";
+import { Text as TextDeprecated } from "@/shared/ui/deprecated/Text/Text";
 
-import styles from "./ArticleEditPage.module.scss";
-
-interface ArticleEditPageProps {
-    className?: string;
-}
-
-const ArticleEditPage = memo((props: ArticleEditPageProps) => {
-    const { className } = props;
+const ArticleEditPage = memo(() => {
     const { t } = useTranslation();
     const { id } = useParams<{ id: string }>();
     const isEdit = Boolean(id);
 
+    const text = isEdit
+        ? t("Edit article ID = ", { ns: "article" }) + id
+        : t("New article", { ns: "article" });
+
     return (
-        <Page className={classNames(styles.articleEditPage, {}, [className])}>
-            {isEdit
-                ? t("Edit article ID = ", { ns: "article" }) + id
-                : t("New article", { ns: "article" })}
+        <Page data-testid="ArticleEditPage">
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={<Text title={text} />}
+                off={<TextDeprecated title={text} />}
+            />
         </Page>
     );
 });

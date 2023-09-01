@@ -67,6 +67,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
+                data-wow="123"
             >
                 <HListBox.Button
                     className={classNames(styles.trigger, {}, [

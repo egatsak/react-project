@@ -17,7 +17,11 @@ import {
     ButtonTheme,
 } from "@/shared/ui/deprecated/Button/Button";
 import { HStack } from "@/shared/ui/redesigned/Stack";
-import { Text, TextTheme } from "@/shared/ui/deprecated/Text/Text";
+import {
+    Text as TextDeprecated,
+    TextSize,
+    TextTheme,
+} from "@/shared/ui/deprecated/Text/Text";
 
 import styles from "./Navbar.module.scss";
 import { ToggleFeatures, toggleFeatures } from "@/shared/lib/features";
@@ -60,10 +64,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                     }
                     off={
                         <>
-                            <Text
+                            <TextDeprecated
                                 className={styles.appName}
                                 title={t("App", { ns: "translation" })}
                                 theme={TextTheme.INVERTED}
+                                size={TextSize.L}
                             />
                             <AppLinkDeprecated
                                 to={getRouteArticleCreate()}

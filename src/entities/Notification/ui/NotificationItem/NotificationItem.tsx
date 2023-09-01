@@ -23,9 +23,12 @@ export const NotificationItem = memo((props: NotificationItemProps) => {
             feature="isAppRedesigned"
             on={
                 <Card
-                    className={classNames(styles.notificationItem, {}, [
-                        className,
-                    ])}
+                    border="normalBorder"
+                    className={classNames(
+                        styles.notificationItemRedesigned,
+                        {},
+                        [className],
+                    )}
                 >
                     <Text title={item.title} text={item.description} />
                 </Card>

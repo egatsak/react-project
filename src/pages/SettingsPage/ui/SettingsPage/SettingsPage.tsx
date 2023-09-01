@@ -4,7 +4,10 @@ import { useTranslation } from "react-i18next";
 import { Page } from "@/widgets/Page";
 import { VStack } from "@/shared/ui/redesigned/Stack";
 import { Text } from "@/shared/ui/redesigned/Text/Text";
+import { Text as TextDeprecated } from "@/shared/ui/deprecated/Text/Text";
+
 import { UiDesignSwitcher } from "@/features/UiDesignSwitcher";
+import { ToggleFeatures } from "@/shared/lib/features";
 
 interface SettingsPageProps {
     className?: string;
@@ -12,14 +15,27 @@ interface SettingsPageProps {
 
 const SettingsPage = memo((props: SettingsPageProps) => {
     const { className } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation("settings");
 
     return (
         <Page className={className}>
-            <VStack gap="16">
-                <Text title={t("Settings", { ns: "translation" })} />
-                <UiDesignSwitcher />
-            </VStack>
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <VStack gap="16">
+                        <Text title={t("Settings", { ns: "settings" })} />
+                        <UiDesignSwitcher />
+                    </VStack>
+                }
+                off={
+                    <VStack gap="16">
+                        <TextDeprecated
+                            title={t("Settings", { ns: "settings" })}
+                        />
+                        <UiDesignSwitcher />
+                    </VStack>
+                }
+            />
         </Page>
     );
 });

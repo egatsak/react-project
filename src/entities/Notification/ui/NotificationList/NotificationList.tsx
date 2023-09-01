@@ -17,13 +17,11 @@ export const NotificationList = memo((props: NotificationListProps) => {
     const { data, isLoading } = useNotifications(null, {
         pollingInterval: 5000,
     });
-
     const Skeleton = toggleFeatures({
         name: "isAppRedesigned",
         on: () => SkeletonRedesigned,
         off: () => SkeletonDeprecated,
     });
-
     if (isLoading) {
         return (
             <VStack
@@ -31,9 +29,9 @@ export const NotificationList = memo((props: NotificationListProps) => {
                 max
                 className={classNames(styles.notificationList, {}, [className])}
             >
-                <Skeleton width="100%" border="8px" height="90px" />
-                <Skeleton width="100%" border="8px" height="90px" />
-                <Skeleton width="100%" border="8px" height="90px" />
+                <Skeleton width="100%" border="12px" height="72px" />
+                <Skeleton width="100%" border="12px" height="72px" />
+                <Skeleton width="100%" border="12px" height="72px" />
             </VStack>
         );
     }

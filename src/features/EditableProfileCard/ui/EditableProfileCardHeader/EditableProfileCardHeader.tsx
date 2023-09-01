@@ -18,6 +18,7 @@ import { ToggleFeatures } from "@/shared/lib/features";
 import { Text } from "@/shared/ui/redesigned/Text/Text";
 import { Button } from "@/shared/ui/redesigned/Button/Button";
 import { Card } from "@/shared/ui/redesigned/Card/Card";
+import styles from "./EditableProfileCardHeader.module.scss";
 
 interface EditableProfileCardHeaderProps {
     className?: string;
@@ -49,14 +50,19 @@ export const EditableProfileCardHeader = memo(
         return (
             <HStack
                 max
+                align="center"
                 justify="between"
-                className={classNames("", {}, [className])}
+                className={classNames(styles.header, {}, [className])}
             >
                 <ToggleFeatures
                     feature="isAppRedesigned"
                     on={
                         <Card border="partial" padding="24" max>
-                            <HStack max justify="between">
+                            <HStack
+                                max
+                                justify="between"
+                                className={styles.headerRedesigned}
+                            >
                                 <Text title={t("Profile", { ns: "profile" })} />
                                 {canEdit && (
                                     <div>
