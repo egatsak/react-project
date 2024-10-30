@@ -6,7 +6,6 @@ import { Icon } from "@/shared/ui/deprecated/Icon/Icon";
 import EyeIcon from "@/shared/assets/icons/icon-article-eye.svg";
 import { Card } from "@/shared/ui/deprecated/Card/Card";
 import { useHover } from "@/shared/lib/hooks/useHover/useHover";
-import { Avatar } from "@/shared/ui/deprecated/Avatar/Avatar";
 import { Button, ButtonTheme } from "@/shared/ui/deprecated/Button/Button";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { AppLink } from "@/shared/ui/deprecated/AppLink/AppLink";
@@ -51,7 +50,7 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
             >
                 <Card className={styles.card}>
                     <div className={styles.header}>
-                        <Avatar size={30} src={article.user.avatar} />
+                        {/* <Avatar size={30} src={article.user.avatar} /> */}
                         <Text
                             text={article.user.username}
                             className={styles.username}
